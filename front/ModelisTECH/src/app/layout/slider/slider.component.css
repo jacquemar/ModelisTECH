@@ -1,0 +1,15 @@
+:host ::ng-deep .swiper-button-next::after,
+:host ::ng-deep .swiper-button-prev::after {
+  display: none;
+}
+
+:host ::ng-deep .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #4F46E5;
+  opacity: 0.2;
+}
+
+:host ::ng-deep .swiper-pagination-bullet-active {
+  opacity: 1;
+}
