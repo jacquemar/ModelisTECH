@@ -1,0 +1,9 @@
+/* Optionnel: pour rendre l'animation plus fluide */
+.transform {
+    will-change: transform;
+  }
+  
+  /* Pour éviter le débordement horizontal */
+  section {
+    overflow-x: hidden;
+  }
