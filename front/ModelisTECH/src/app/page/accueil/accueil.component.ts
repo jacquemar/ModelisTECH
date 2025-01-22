@@ -12,5 +12,8 @@ import {ServicesComponent} from '../../layout/service/service.component';
   styleUrl: './accueil.component.css'
 })
 export class AccueilComponent {
+  imgPath = '/images/page-bg/image_historique.png';
+  imgFixed = '/images/page-bg/carriere.jpg';
+
 
 }

@@ -1,11 +1,57 @@
-<div *ngIf="services; else loading">
-  <div *ngFor="let service of services" class="service-card">
-    <h2>{{ service.name }}</h2>
-    <p>{{ service.description }}</p>
-    <button (click)="detailService(service.id)">Voir plus</button>
+<!-- services.component.html -->
+<div class="bg-gray-100 pt-2.5 pb-7.5">
+  <div class="container mx-auto px-4">
+    <div>
+      <h1 class="text-center font-poppins pb-4 mt-10 text-4xl font-semibold text-gray-800">NOS SERVICES</h1>
+    </div>
+
+    <div class="w-full flex justify-end items-center mb-2.5">
+      <a routerLink="/expertises"
+         class="mb-7.5 text-white bg-base1 hover:bg-black px-4 py-2 rounded transition-colors">
+        Voir tous les services
+      </a>
+    </div>
+
+    <div class="mx-8 mt-10 mb-10 no-scrollbar overflow-x-auto whitespace-nowrap">
+      <div class="inline-flex gap-6">
+        <div class="group w-64" *ngFor="let service of services">
+          <div class="overflow-hidden">
+            <div class="overflow-hidden mb-6">
+              <a>
+                <img [src]="service.imageUrl"
+                     class="w-full h-auto transform transition-transform duration-300 group-hover:scale-105"
+                     alt="Service image">
+              </a>
+            </div>
+            <div>
+              <h4 class="text-xl tracking-wide text-slate-700 mb-2">
+                <a>{{ service.title }}</a>
+              </h4>
+              <p class="text-base mt-4 tracking-wider text-justify font-roboto text-gray-500 mb-6">{{ service.description }}</p>
+              <a class="inline-block tracking-wide text-sm font-semibold px-8 py-2 text-white bg-base1 hover:bg-black rounded transition-colors">
+                DÉTAIL
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="flex gap-4 mt-20 mb-24 justify-center">
+    <button (click)="scrollLeft()" class="group !p-2 flex justify-center items-center !w-10 !h-10 bg-black bg-opacity-30 transition-all duration-500 !top-2/4 !-translate-y-8 !left-5 hover:bg-black">
+      <svg class="h-4 w-4 text-white group-hover:text-white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M10.0002 11.9999L6 7.99971L10.0025 3.99719" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <button (click)="scrollRight()" class="group !p-2 flex justify-center items-center !w-10 !h-10 bg-black bg-opacity-30 transition-all duration-500 !top-2/4 !-translate-y-8 !left-5 hover:bg-black">
+      <svg class="h-4 w-4 text-white group-hover:text-white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M5.99984 4.00012L10 8.00029L5.99748 12.0028" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
   </div>
 </div>
 
-<ng-template #loading>
-  <p>Chargement des services...</p>
+<ng-template #chargement>
+  <p class="text-center py-4">Chargement des services...</p>
 </ng-template>

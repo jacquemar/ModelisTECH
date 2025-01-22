@@ -1,3 +1,87 @@
 <app-slider/>
 <app-about/>
 <app-services/>
+<div class="bg-white pt-2.5 pb-7.5">
+  <div class="container mx-auto px-4">
+    <div>
+      <h1 class="text-center font-poppins pb-4 mt-10 text-4xl font-semibold text-gray-800">NOTRE HISTORIQUE</h1>
+    </div>
+    <div class="mx-12 mb-32 mt-12">
+      <img [src]="imgPath" class="bg-cover" alt="">
+    </div>
+    </div>
+</div>
+
+<div class="relative bg-fixed bg-cover py-19" style="background-image: url({{imgFixed}});">
+  <!-- Fond noir transparent sous le texte -->
+  <div class="absolute inset-0 bg-black opacity-40 z-0"></div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="text-center text-white mb-16 pt-32">
+      <!-- Décalage du texte vers le bas avec padding-top -->
+      <h1 class="font-poppins pb-6 text-4xl tracking-widest font-semibold">POURQUOI NOUS CHOISIR ?</h1>
+      <p class="font-poppins text-2xl">5 bonnes raisons de travailler avec MODELIS TECH</p>
+    </div>
+
+    <div class="mt-12 flex flex-wrap text-white font-poppins text-xl gap-6 justify-center">
+      <!-- Première colonne -->
+      <div class="w-full sm:w-1/2 lg:w-1/5 text-center">
+        <p class="pb-8">Nous utilisons les technologies dont <br> nous faisons la promotion</p>
+        <span class="text-cyan-600">
+          <!-- Icône -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-24">
+            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+          </svg>
+        </span>
+      </div>
+
+      <!-- Deuxième colonne -->
+      <div class="w-full sm:w-1/2 lg:w-1/5 text-center">
+        <p class="pb-8">Nous avons une <br>équipe <br> pluridisciplinaire</p>
+        <span class="text-cyan-600">
+          <!-- Icône -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-24">
+            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+          </svg>
+        </span>
+      </div>
+
+      <!-- Troisième colonne -->
+      <div class="w-full sm:w-1/2 lg:w-1/5 text-center">
+        <p class="pb-8">Nous restons à <br> l’écoute des besoins <br> de nos clients</p>
+        <span class="text-cyan-600">
+          <!-- Icône -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-24">
+            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+          </svg>
+        </span>
+      </div>
+
+      <!-- Quatrième colonne -->
+      <div class="w-full sm:w-1/2 lg:w-1/5 text-center">
+        <p class="pb-8">Nous proposons des solutions innovantes <br> aux problématiques</p>
+        <span class="text-cyan-600">
+          <!-- Icône -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-24">
+            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+          </svg>
+        </span>
+      </div>
+
+      <!-- Cinquième colonne -->
+      <div class="w-full sm:w-1/2 lg:w-1/5 text-center">
+        <p class="pb-8">Nous portons nos valeurs auprès de nos clients</p>
+        <span class="text-cyan-600">
+          <!-- Icône -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-24">
+            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
