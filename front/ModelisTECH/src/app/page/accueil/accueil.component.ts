@@ -1,14 +1,27 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { MatSliderModule } from '@angular/material/slider';
 import { SliderComponent } from '../../layout/slider/slider.component';
 import { AboutComponent } from '../../layout/about/about.component';
 import { ServicesComponent } from '../../layout/service/service.component';
-import { CommonModule } from '@angular/common'; // Ajoutez cette importation
+import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environment/environment';
+import {FooterComponent} from '../../layout/footer/footer.component'; // Ajoutez cette importation
 
 interface ClientLogo {
   id: number;
   name: string;
   image: string;
+}
+
+interface Realisation {
+  id: number;
+  titre: string;
+  description: string;
+  pays: string;
+  duree: string;
+  resultats: string;
+  image: string[];  // Correction ici
 }
 
 @Component({
@@ -18,16 +31,51 @@ interface ClientLogo {
     SliderComponent,
     AboutComponent,
     ServicesComponent,
-    CommonModule // Ajoutez CommonModule
+    CommonModule,
+    FooterComponent
   ],
   templateUrl: './accueil.component.html',
-  styleUrl: './accueil.component.css'
+  styleUrls: ['./accueil.component.css']  // Correction ici
 })
-export class AccueilComponent {
+export class AccueilComponent implements OnInit {
   imgPath = '/images/page-bg/image_historique.png';
   imgFixed = '/images/page-bg/carriere.jpg';
+  realisations: Realisation[] = [];
 
-  // Ajout de la liste des logos clients
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.fetchRealisations();
+  }
+
+  fetchRealisations(): void {
+    this.http.get<Realisation[]>('api/realisation')
+      .subscribe({
+        next: (data) => {
+          this.realisations = data;
+          console.log(this.realisations);
+        },
+        error: (err) => {
+          console.error('Erreur lors de la récupération des données', err);
+          this.realisations = this.getLocalRealisations();  // Correction ici
+        }
+      });
+  }
+
+  getLocalRealisations(): Realisation[] {
+    return [
+      {
+        id: 1,
+        titre: 'DÉVELOPPEMENT DE LOGICIEL',
+        description: 'Nous Développons des logiciels métiers et spécifiques pour tout type de clients. Nos logiciels utilisent à la fois les systèmes libres et propriétaires.',
+        pays: 'France',
+        duree: '12 mois',
+        resultats: 'Amélioration de la productivité',
+        image: ['/images/service/2.jpeg'],  // Correction ici
+      },
+    ];
+  }
+
   typeclients: ClientLogo[] = [
     { id: 1, name: 'Client 1', image: 'images/clients/cienergie.png' },
     { id: 2, name: 'Client 2', image: 'images/clients/comafrique.png' },
@@ -36,4 +84,13 @@ export class AccueilComponent {
     { id: 5, name: 'Client 5', image: 'images/clients/bani.png' },
   ];
 
+  scrollLeft(): void {
+    const container = document.querySelector('.overflow-x-auto') as HTMLElement;
+    container.scrollBy({ left: -300, behavior: 'smooth' });
+  }
+
+  scrollRight(): void {
+    const container = document.querySelector('.overflow-x-auto') as HTMLElement;
+    container.scrollBy({ left: 300, behavior: 'smooth' });
+  }
 }

@@ -135,7 +135,7 @@
         <h3 class="text-xl font-semibold mb-4 text-gray-700">DÉVELOPPEMENT D'APPLICATION</h3>
       </div>
       <div class="mb-4 w-full mt-10">
-        <ul class="list-disc text-lg/10 absolute mt-60 list-inside text-gray-600 w-full pl-6">
+        <ul class="list-disc text-base/10 absolute mt-60 list-inside text-cyan-800 w-full pl-6">
           <li class="">Développement d’applications métiers (Topographie, Géographie, Informatique)</li>
           <li>Développement de logiciels informatiques</li>
           <li>Développement d’applications Web</li>
@@ -167,10 +167,12 @@
         <h3 class="text-xl font-semibold mb-4 text-gray-700">SIG</h3>
       </div>
       <div class="mb-4 w-full mt-10">
-        <ul class="list-disc absolute mt-60 list-inside text-gray-600 text-left w-full pl-6">
-          <li>Première compétence stratégique</li>
-          <li>Deuxième compétence stratégique</li>
-          <li>Troisième compétence stratégique</li>
+        <ul class="list-disc text-base/10 absolute mt-52 list-inside text-cyan-800 w-full pl-6">
+          <li>Collecte et traitement de données</li>
+          <li>Modélisation de bases de données spatiales</li>
+          <li>Intégration de données</li>
+          <li>Création de projet SIG et confection de cartes thématiques</li>
+          <li>Réalisation d'application web cartographiques (WebMapping)</li>
         </ul>
         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170.87 280.86" class="w-full">
           <defs>
@@ -200,10 +202,12 @@
       </div>
 
       <div class="mb-4 w-full mt-10">
-        <ul class="list-disc absolute mt-60 list-inside text-gray-600 text-left w-full pl-6">
-          <li>Première compétence stratégique</li>
-          <li>Deuxième compétence stratégique</li>
-          <li>Troisième compétence stratégique</li>
+        <ul class="list-disc text-base/10 absolute mt-52 list-inside text-cyan-800 w-full pl-6">
+          <li>Formation en SIG : Open Source et propriétaire</li>
+          <li>Formation en développement Web</li>
+          <li>Formation en développement Mobile</li>
+          <li>Formation en développement d’applications métiers (Topographie, Géographie, Informatique)</li>
+
         </ul>
         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170.87 280.86" class="w-full">
           <defs>
@@ -222,3 +226,67 @@
     </div>
   </div>
 </div>
+
+<!-- nos realisations -->
+
+<div class="bg-gray-100 pt-2.5 pb-7.5">
+  <div class="container mx-auto px-4">
+    <div>
+      <h1 class="text-center font-poppins pb-4 mt-10 text-4xl font-semibold text-gray-800">NOS RÉALISATIONS</h1>
+    </div>
+
+    <div class="w-full flex justify-end items-center mb-2.5">
+      <a routerLink="/expertises"
+         class="mb-7.5 text-white bg-base1 hover:bg-black px-4 py-2 rounded transition-colors">
+        Voir toutes les réalisations
+      </a>
+    </div>
+
+    <div class="mx-8 mt-10 mb-10 no-scrollbar overflow-x-auto whitespace-nowrap">
+      <div class="inline-flex gap-6">
+        <div class="group w-64" *ngFor="let realisation of realisations">
+          <div class="overflow-hidden">
+            <div class="overflow-hidden mb-6">
+              <a>
+                <img [src]="realisation.image"
+                     class="w-full h-auto transform transition-transform duration-300 group-hover:scale-105"
+                     alt="Service image">
+              </a>
+            </div>
+            <div>
+              <h4 class="text-xl tracking-wide text-slate-700 mb-2">
+                <a>{{ realisation.titre }}</a>
+              </h4>
+              <p class="text-base mt-4 tracking-wider text-justify font-roboto text-gray-500 mb-6">{{ realisation.description }}</p>
+              <a class="inline-block tracking-wide text-sm font-semibold px-8 py-2 text-white bg-base1 hover:bg-black rounded transition-colors">
+                DÉTAIL
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="flex gap-4 mt-20 mb-24 justify-center">
+    <button (click)="scrollLeft()" class="group !p-2 flex justify-center items-center !w-10 !h-10 bg-black bg-opacity-30 transition-all duration-500 !top-2/4 !-translate-y-8 !left-5 hover:bg-black">
+      <svg class="h-4 w-4 text-white group-hover:text-white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M10.0002 11.9999L6 7.99971L10.0025 3.99719" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <button (click)="scrollRight()" class="group !p-2 flex justify-center items-center !w-10 !h-10 bg-black bg-opacity-30 transition-all duration-500 !top-2/4 !-translate-y-8 !left-5 hover:bg-black">
+      <svg class="h-4 w-4 text-white group-hover:text-white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M5.99984 4.00012L10 8.00029L5.99748 12.0028" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- footer-->
+
+<app-footer/>
+
+<ng-template #chargement>
+  <p class="text-center py-4">Chargement des services...</p>
+</ng-template>
+
