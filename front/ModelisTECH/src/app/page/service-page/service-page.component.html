@@ -1,0 +1,24 @@
+<div class="relative h-[60vh] max-h-[800px] overflow-hidden">
+  <img [src]="background" class="h-full w-full object-cover object-center">
+  <!-- Overlay noir -->
+  <div class="absolute top-0 left-0 right-0 h-[80vh] bg-black opacity-40"></div>
+
+  <!-- Texte centré -->
+  <div class="absolute inset-0 z-20 flex mt-44 flex-col items-center justify-center text-center">
+    <h1 class="text-xl tracking-wider md:text-4xl uppercase mb-2 font-semibold font-poppins text-white">
+      Notre Expertise
+    </h1>
+
+    <!-- Fil d'Ariane simple -->
+    <div class="text-base font-poppins mt-20 pt-9 text-white">
+      <a href="/" class="hover:opacity-80">Accueil</a>
+      <span class="mx-2">></span>
+      <a href="/equipe" class="relative text-base1">
+        Services
+        <span class="absolute top-10 left-0 w-full h-0.5 bg-base1"></span>
+      </a>
+    </div>
+  </div>
+</div>
+<app-services/>
+<app-footer/>
