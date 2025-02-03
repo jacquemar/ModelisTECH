@@ -1,0 +1,12 @@
+/* projet.component.css */
+.transition-opacity {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.prose img {
+  @apply rounded-lg;
+}
+
+.button-active {
+  @apply bg-primary text-white;
+}

@@ -1,1 +1,49 @@
-<p>blog works!</p>
+<div class="relative min-h-screen">
+  <!-- En-tête avec image -->
+  <div class="relative h-[60vh] max-h-[800px] overflow-hidden">
+    <img [src]="background" class="h-full w-full object-cover object-center">
+    <div class="absolute top-0 left-0 right-0 h-[80vh] bg-black opacity-40"></div>
+
+    <div class="absolute inset-0 z-20 flex mt-44 flex-col items-center justify-center text-center">
+      <h1 class="text-xl tracking-wider md:text-4xl uppercase mb-2 font-semibold font-poppins text-white">
+        NOTRE BLOG
+      </h1>
+
+      <div class="text-base font-poppins mt-20 pt-9 text-white">
+        <a href="/" class="hover:opacity-80">Accueil</a>
+        <span class="mx-2">></span>
+        <span class="text-base1">Blog</span>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto px-4">
+    <div>
+      <h1 class="text-center font-poppins pb-4 mt-10 text-4xl font-semibold text-gray-800">NOS ARTICLES</h1>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-12 mb-12">
+      <div *ngFor="let blog of blogs" class="bg-white shadow-md rounded-lg overflow-hidden">
+        <div class="cursor-pointer">
+          <img [src]="imgBack + blog.image" alt="" class="w-full h-48 object-cover">
+        </div>
+        <div class="p-4">
+          <div class="flex items-center space-x-3 mb-2" *ngIf="blog.utilisateurId">
+            <img [src]="imgBack + blog.utilisateurId.personneId.image" alt="admin" class="w-10 h-10 rounded-full">
+            <span class="text-gray-700 text-sm">
+              Publié par : {{ blog.utilisateurId.personneId.prenom }} {{ blog.utilisateurId.personneId.nom }}
+            </span>
+          </div>
+          <h4 class="text-lg font-semibold text-gray-800 hover:underline cursor-pointer" [innerHTML]="blog.libelle">
+
+          </h4>
+
+          <div class="text-sm text-gray-600 mt-2" [innerHTML]="blog.description.slice(0, 150) + ' ... ' "></div>
+          <div class="flex justify-between text-sm text-gray-500 mt-2">
+            <span><i class="fa fa-comment"></i></span>
+            <span><i class="fa fa-calendar"></i> {{ blog.dateCreation }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

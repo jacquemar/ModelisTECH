@@ -248,16 +248,24 @@
           <div class="overflow-hidden">
             <div class="overflow-hidden mb-6">
               <a>
-                <img [src]=" "
-                     class="w-full h-auto transform transition-transform duration-300 group-hover:scale-105"
-                     alt="Service image">
+                <img *ngIf="realisation.images && realisation.images.length > 0"
+                     [src]="imgBack + realisation.images[0].image"
+                     class="w-full h-48 object-cover transform transition-transform duration-300 group-hover:scale-105"
+                     [alt]="realisation.libelle">
               </a>
             </div>
             <div>
               <h4 class="text-xl tracking-wide text-slate-700 mb-2">
-                <a>{{ realisation.titre }}</a>
+                <a>{{ realisation.libelle }}</a>
               </h4>
-              <p class="text-base mt-4 tracking-wider text-justify font-roboto text-gray-500 mb-6">{{ realisation.description }}</p>
+              <div class="text-base mt-4 tracking-wider text-justify font-roboto text-gray-500 mb-6 line-clamp-3" [innerHTML]="realisation.description"></div>
+              <span *ngIf="realisation.enCours" class="inline-block px-3 py-1 text-xs font-medium text-green-700 bg-green-100 rounded-full mb-3">
+                En cours
+              </span>
+              <div class="text-sm text-gray-600 mb-4">
+                <span class="font-medium">{{ realisation.paysId.nom }}</span> •
+                <span>{{ realisation.dateDebut | date:'MMM yyyy' }}</span>
+              </div>
               <a class="inline-block tracking-wide text-sm font-semibold px-8 py-2 text-white bg-base1 hover:bg-black rounded transition-colors">
                 DÉTAIL
               </a>

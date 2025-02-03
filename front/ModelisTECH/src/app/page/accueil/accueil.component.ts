@@ -3,7 +3,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { SliderComponent } from '../../layout/slider/slider.component';
 import { AboutComponent } from '../../layout/about/about.component';
 import { ServicesComponent } from '../../layout/service/service.component';
-import { CommonModule } from '@angular/common';
+import {CommonModule, DatePipe} from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environment/environment';
@@ -14,15 +14,37 @@ interface ClientLogo {
   name: string;
   image: string;
 }
+interface Image {
+  id: number;
+  image: string;
+
+}
+
+interface PaysId {
+  id: number;
+  code: string;
+  nom: string;
+}
+
+interface TypeClientId {
+  id: number;
+  image: string;
+  description: string;
+  dateCreation: string;
+}
 
 interface Realisation {
-  id: number;
-  titre: string;
+  dateCreation: string;
+  dateDebut: string;
+  dateFin: string | null;
   description: string;
-  pays: string;
-  duree: string;
-  resultats: string;
-
+  enCours: boolean;
+  id: number;
+  images: Image[];
+  libelle: string;
+  paysId: PaysId;
+  resultat: string;
+  typeclientId: TypeClientId;
 }
 
 @Component({
@@ -35,7 +57,7 @@ interface Realisation {
     CommonModule,
     FooterComponent,
     HttpClientModule,
-
+    DatePipe,
   ],
   standalone: true,
   templateUrl: './accueil.component.html',
@@ -60,25 +82,11 @@ export class AccueilComponent implements OnInit {
         },
         error: (err) => {
           console.error('Erreur lors de la récupération des données', err);
-          this.realisations = this.getLocalRealisations();  // Correction ici
         }
       });
   }
   ngOnInit(): void {
     this.fetchRealisations();
-  }
-  getLocalRealisations(): Realisation[] {
-    return [
-      {
-        id: 1,
-        titre: 'DÉVELOPPEMENT DE LOGICIEL',
-        description: 'Nous Développons des logiciels métiers et spécifiques pour tout type de clients. Nos logiciels utilisent à la fois les systèmes libres et propriétaires.',
-        pays: 'France',
-        duree: '12 mois',
-        resultats: 'Amélioration de la productivité',
-
-      },
-    ];
   }
 
   typeclients: ClientLogo[] = [
@@ -102,3 +110,5 @@ export class AccueilComponent implements OnInit {
     window.scrollTo(0, 0);
   }
 }
+
+

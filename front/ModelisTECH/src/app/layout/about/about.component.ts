@@ -27,7 +27,7 @@ export class AboutComponent implements OnInit {
           }, 100);
         }
       });
-    }, { 
+    }, {
       threshold: 0.1,
       rootMargin: '40px' // Déclenche un peu plus tôt
     });

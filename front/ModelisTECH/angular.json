@@ -58,12 +58,14 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "buildTarget": "ModelisTECH:build:production"
             },
             "development": {
-              "proxyConfig": "src/proxy.conf.json",
               "buildTarget": "ModelisTECH:build:development"
             }
           },

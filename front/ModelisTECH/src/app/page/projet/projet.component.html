@@ -1,1 +1,115 @@
-<p>projet works!</p>
+<div class="relative min-h-screen">
+  <!-- En-tête avec image -->
+  <div class="relative h-[60vh] max-h-[800px] overflow-hidden">
+    <img [src]="background" class="h-full w-full object-cover object-center">
+    <div class="absolute top-0 left-0 right-0 h-[80vh] bg-black opacity-40"></div>
+
+    <div class="absolute inset-0 z-20 flex mt-44 flex-col items-center justify-center text-center">
+      <h1 class="text-xl tracking-wider md:text-4xl uppercase mb-2 font-semibold font-poppins text-white">
+        NOS PROJETS
+      </h1>
+
+      <div class="text-base font-poppins mt-20 pt-9 text-white">
+        <a href="/" class="hover:opacity-80">Accueil</a>
+        <span class="mx-2">></span>
+        <span class="text-base1">Projets</span>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto px-4">
+    <div>
+      <h1 class="text-center font-poppins pb-4 mt-10 text-4xl font-semibold text-gray-800">NOS RÉALISATIONS</h1>
+    </div>
+  <!-- Liste des projets -->
+  <div class="container mx-auto px-4 py-16">
+    <div class="space-y-16">
+      @for (projet of realisations; let i = $index; track projet.id) {
+        <div [class]="i % 2 === 0 ? 'bg-gray-50' : 'bg-white'" class="rounded-lg shadow-lg p-8">
+          <h2 class="text-2xl font-semibold mb-6">{{projet.libelle}}</h2>
+
+          <!-- Boutons de navigation -->
+          <div class="flex gap-4 mb-8">
+            <button
+              (click)="setActiveTab(i, 'description')"
+              class="px-4 py-2 rounded transition-colors"
+              [class.bg-base1]="projet.activeTab === 'description'"
+              [class.text-white]="projet.activeTab === 'description'"
+            >Description</button>
+            <button
+              (click)="setActiveTab(i, 'client')"
+              class="px-4 py-2 rounded transition-colors"
+              [class.bg-base1]="projet.activeTab === 'client'"
+              [class.text-white]="projet.activeTab === 'client'"
+            >Client</button>
+            <button
+              (click)="setActiveTab(i, 'pays')"
+              class="px-4 py-2 rounded transition-colors"
+              [class.bg-base1]="projet.activeTab === 'pays'"
+              [class.text-white]="projet.activeTab === 'pays'"
+            >Pays</button>
+            <button
+              (click)="setActiveTab(i, 'duree')"
+              class="px-4 py-2 rounded transition-colors"
+              [class.bg-base1]="projet.activeTab === 'duree'"
+              [class.text-white]="projet.activeTab === 'duree'"
+            >Durée</button>
+            <button
+              (click)="setActiveTab(i, 'resultat')"
+              class="px-4 py-2 rounded transition-colors"
+              [class.bg-base1]="projet.activeTab === 'resultat'"
+              [class.text-white]="projet.activeTab === 'resultat'"
+            >Résultats</button>
+          </div>
+
+          <!-- Contenu du projet -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div [class]="i % 2 === 0 ? 'order-1' : 'order-2'" class="space-y-4">
+              @switch (projet.activeTab) {
+                @case ('description') {
+                  <div [innerHTML]="projet.description" class="prose max-w-none"></div>
+                }
+                @case ('client') {
+                  <div class="w-48">
+                    <img [src]="projet.typeclientId.image" [alt]="projet.typeclientId.description" class="w-full">
+                  </div>
+                }
+                @case ('pays') {
+                  <p>{{projet.paysId.nom}}</p>
+                }
+                @case ('duree') {
+                  <p>
+                    @if (projet.enCours) {
+                      Depuis {{projet.dateDebut | date:'MMMM yyyy'}} à nos jours
+                    } @else {
+                      {{projet.dateDebut | date:'MMMM yyyy'}} - {{projet.dateFin | date:'MMMM yyyy'}}
+                    }
+                  </p>
+                }
+                @case ('resultat') {
+                  <div [innerHTML]="projet.resultat" class="prose max-w-none"></div>
+                }
+              }
+            </div>
+
+            <!-- Carrousel d'images -->
+            <div [class]="i % 2 === 0 ? 'order-2' : 'order-1'" class="relative h-80">
+              @for (image of projet.images; track $index) {
+                <img
+                  [src]="getFullImageUrl(image.image)"
+                  class="absolute inset-0 w-full h-full object-cover rounded-lg"
+                  [class.opacity-100]="$index === activeTabIndex"
+                  [class.opacity-0]="$index !== activeTabIndex"
+                >
+              }
+            </div>
+
+
+
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+</div>
+  <app-footer class="relative z-30 -mt-40" />

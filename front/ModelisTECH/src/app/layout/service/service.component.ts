@@ -2,13 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environment/environment';
-import { Observable } from 'rxjs';
 
 interface Service {
   id: number;
-  title: string;
+  libelle: string;
   description: string;
-  imageUrl: string;
+  image: string;
 }
 
 @Component({
@@ -18,8 +17,8 @@ interface Service {
   templateUrl: './service.component.html'
 })
 export class ServicesComponent implements OnInit {
-  services: any[] | undefined;
-  imgBack: string = environment.apiUrl + '/public/images/service/';
+  services: Service[] = [];
+  imgBack: string = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 
@@ -28,16 +27,15 @@ export class ServicesComponent implements OnInit {
   }
 
   fetchServices(): void {
-    this.http.get<any[]>('api/service')
+    this.http.get<Service[]>(environment.apiUrl+'api/service')
       .subscribe({
         next: (data) => {
-          console.log(this.services);
-          this.services = data;
 
+          this.services = data;
+          console.log(this.services);
         },
         error: (err) => {
           console.error('Erreur lors de la récupération des données', err);
-          // Utilisation des données locales comme fallback
           this.services = this.getLocalServices();
         }
       });
@@ -48,33 +46,33 @@ export class ServicesComponent implements OnInit {
     return [
       {
         id: 1,
-        title: 'DÉVELOPPEMENT DE LOGICIEL',
+        libelle: 'DÉVELOPPEMENT DE LOGICIEL',
         description: 'Nous Développons des logiciels métiers et spécifiques pour tout type de clients. Nos logiciels utilisent à la foi les systèmes libres et propriétaires.',
-        imageUrl: '/images/service/2.jpeg'
+        image: '/images/service/2.jpeg'
       },
       {
         id: 2,
-        title: 'SYSTÈME D\'INFORMATION GÉOGRAPHIQUE',
+        libelle: 'SYSTÈME D\'INFORMATION GÉOGRAPHIQUE',
         description: 'Solutions avancées de cartographie et d\'analyse géospatiale.',
-        imageUrl: '/images/service/1.jpeg'
+        image: '/images/service/1.jpeg'
       },
       {
         id: 3,
-        title: 'FORMATION',
+        libelle: 'FORMATION',
         description: 'Programmes de formation personnalisés et adaptés à vos besoins.',
-        imageUrl: 'images/service/3.png'
+        image: 'images/service/3.png'
       },
       {
         id: 4,
-        title: 'HÉBERGEMENT',
+        libelle: 'HÉBERGEMENT',
         description: 'Solutions d\'hébergement sécurisées et performantes.',
-        imageUrl: 'images/service/4.png'
+        image: 'images/service/4.png'
       },
       {
         id: 5,
-        title: 'DEVELOPPEMENT',
+        libelle: 'DEVELOPPEMENT',
         description: 'Services de développement sur mesure.',
-        imageUrl: '/images/service/5.jpg'
+        image: '/images/service/5.jpg'
       }
     ];
   }

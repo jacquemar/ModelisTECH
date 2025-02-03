@@ -1,12 +1,21 @@
 import {Component, OnInit} from '@angular/core';
+import {NgForOf} from "@angular/common";
+import {BlogController, Blog} from '../../services/controller/blog.controller';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-footer',
-  imports: [],
+    imports: [
+        NgForOf
+    ],
+  standalone:true,
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css'
 })
 export class FooterComponent implements OnInit{
+  constructor(private http: HttpClient, private blogController: BlogController,) {
+  }
+  blogs: Blog[] = [];
   liens = [
     { libelle: 'LinkedIn', lien: 'https://www.linkedin.com/company/modelis-tech' },
     { libelle: 'Twitter', lien: 'https://twitter.com/ModelisTech' },
@@ -14,11 +23,6 @@ export class FooterComponent implements OnInit{
     { libelle: 'Contact', lien: 'mailto:contact@modelistech.com' }
   ];
 
-  blogs = [
-    { id: 1, libelle: 'Développement logiciel pour entreprises', date: '2021-09-15' },
-    { id: 2, libelle: 'Tendances technologiques en 2021', date: '2021-08-01' },
-    { id: 3, libelle: 'Sécurité des données dans le cloud', date: '2021-07-25' }
-  ];
 
   contacts = [
     {
@@ -29,10 +33,14 @@ export class FooterComponent implements OnInit{
   ];
 
   ngOnInit(): void {
-    // Initialisation ou récupération des données, si besoin
-  }
+    this.blogController.listAll().subscribe({
+      next: (response: any) => {
+        this.blogs = response;
+        console.log('Articles chargées:', this.blogs);
 
-  detailblog(blogId: number): void {
-    console.log(`Afficher les détails pour le blog ${blogId}`);
-  }
-}
+      },
+        error: (error) => {
+        console.error('Erreur lors du chargement des articles', error)
+        }
+      })
+  } }
