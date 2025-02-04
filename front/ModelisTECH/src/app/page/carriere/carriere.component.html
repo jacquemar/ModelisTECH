@@ -1,1 +1,89 @@
-<p>carriere works!</p>
+<div class="relative min-h-screen">
+  <!-- En-tête avec image -->
+  <div class="relative h-[60vh] max-h-[800px] overflow-hidden">
+    <img [src]="background" class="h-full w-full object-cover object-center">
+    <div class="absolute top-0 left-0 right-0 h-[80vh] bg-black opacity-40"></div>
+
+    <div class="absolute inset-0 z-20 flex mt-44 flex-col items-center justify-center text-center">
+      <h1 class="text-xl tracking-wider md:text-4xl uppercase mb-2 font-semibold font-poppins text-white">
+        NOS OFFRES
+      </h1>
+
+      <div class="text-base font-poppins mt-20 pt-9 text-white">
+        <a href="/" class="hover:opacity-80">Accueil</a>
+        <span class="mx-2">></span>
+        <span class="text-base1">Carrière</span>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto px-4 mb-10">
+    <div>
+      <h1 class="text-start font-poppins pb-4 mt-9 ml-14 tracking-wider text-xl font-base text-gray-700">NOS OFFRES</h1>
+    </div>
+
+    <div class="flex flex-wrap " *ngIf="offres">
+      <div class="w-full md:w-1/2 ml-14 px-2 mb-5" *ngFor="let offre of offres">
+        <div class="bg-white shadow-lg border-solid border-s border-gray-500 cursor-pointer transition transform hover:scale-105 hover:bg-base1 hover:text-white">
+          <div class="p-4 mt-8">
+            <h6 class="mb-2 text-xs ml-4 font-light tracking-wider font-poppins">
+              <a [innerHTML]="offre.libelle"></a>
+            </h6>
+            <ul class="flex row ml-3 mt-4 font-light text-lg">
+              <li class="mb-1 mr-6">
+                <a class="text-lg flex items-center">
+                  <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 480"  class="w-4 h-4 mr-2 inline-block">
+                    <defs>
+                      <style>
+                        .cls-1 {
+                          fill: #000;
+                          stroke-width: 0px;
+                        }
+                      </style>
+                    </defs>
+                    <path class="cls-1" d="M184,48h144c4.4,0,8,3.6,8,8v40h-160v-40c0-4.4,3.6-8,8-8ZM128,56v40h-64C28.7,96,0,124.7,0,160v96h512v-96c0-35.3-28.7-64-64-64h-64v-40c0-30.9-25.1-56-56-56h-144c-30.9,0-56,25.1-56,56ZM512,288h-192v32c0,17.7-14.3,32-32,32h-64c-17.7,0-32-14.3-32-32v-32H0v128c0,35.3,28.7,64,64,64h384c35.3,0,64-28.7,64-64v-128Z"/>
+                  </svg>
+
+                  <span>{{ offre.typeOffreId.libelle }}</span>
+                </a>
+              </li>
+              <li class="mb-1 mr-6">
+                <a class="text-lg flex items-center">
+
+                  <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 510.68" class="w-4 h-4 mr-2 inline-block">
+                    <defs>
+                      <style>
+                        .cls-1 {
+                          fill: #000;
+                          stroke-width: 0;
+                        }
+                      </style>
+                    </defs>
+                    <path class="cls-1" d="M215.7,499.2c51.3-64.2,168.3-219.8,168.3-307.2C384,86,298,0,192,0S0,86,0,192c0,87.4,117,243,168.3,307.2,12.3,15.3,35.1,15.3,47.4,0h0ZM192,128c35.35,0,64,28.65,64,64s-28.65,64-64,64-64-28.65-64-64,28.65-64,64-64Z"/>
+                  </svg>
+                  <span>{{ offre.paysId.nom }}</span>
+                </a>
+              </li>
+              <li class="mb-1 mr-6">
+                <a class="text-lg flex items-center">
+                  <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 mr-2 inline-block">
+                    <defs>
+                      <style>
+                        .cls-1 {
+                          fill: #000;
+                          stroke-width: 0;
+                        }
+                      </style>
+                    </defs>
+                    <path class="cls-1" d="M128,0c17.7,0,32,14.3,32,32v32h128v-32c0-17.7,14.3-32,32-32s32,14.3,32,32v32h48c26.5,0,48,21.5,48,48v48H0v-48c0-26.5,21.5-48,48-48h48v-40c0-30.9-25.1-56-56-56h-144c-30.9,0-56,25.1-56,56ZM0,192h448v272c0,26.5-21.5,48-48,48H48c-26.5,0-48-21.5-48-48V192ZM64,272v32c0,8.8,7.2,16,16,16h32c8.8,0,16-7.2,16-16v-32c0-8.8-7.2-16-16-16h-32c-8.8,0-16,7.2-16,16ZM192,272v32c0,8.8,7.2,16,16,16h32c8.8,0,16-7.2,16-16v-32c0-8.8-7.2-16-16-16h-32c-8.8,0-16,7.2-16,16ZM336,256c-8.8,0-16,7.2-16,16v32c0,8.8,7.2,16,16,16h32c8.8,0,16-7.2,16-16v-32c0-8.8-7.2-16-16-16h-32ZM64,400v32c0,8.8,7.2,16,16,16h32c8.8,0,16-7.2,16-16v-32c0-8.8-7.2-16-16-16h-32c-8.8,0-16,7.2-16,16ZM208,384c-8.8,0-16,7.2-16,16v32c0,8.8,7.2,16,16,16h32c8.8,0,16-7.2,16-16v-32c0-8.8-7.2-16-16-16h-32ZM320,400v32c0,8.8,7.2,16,16,16h32c8.8,0,16-7.2,16-16v-32c0-8.8-7.2-16-16-16h-32c-8.8,0-16,7.2-16,16Z"/>
+                  </svg>
+                  <span>Publié le {{ offre.dateCreation | date }}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer/>
+</div>
