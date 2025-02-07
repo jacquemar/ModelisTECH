@@ -16,11 +16,11 @@
     <!-- Début bloc éléments de liste pour un service -->
 
     <div class="mx-8 mt-10 mb-10 no-scrollbar overflow-x-auto whitespace-nowrap">
-      <div class="inline-flex gap-6">
+      <div class="inline-flex gap-6" >
         <div class="group w-64" *ngFor="let service of services">
           <div class="overflow-hidden">
             <div class="overflow-hidden mb-6" *ngIf="service!=null">
-              <a>
+              <a routerLink="/services-details" (click)="detail(service.id)">
                 <img [src]="imgBack + service.image"
                      class="w-full h-auto transform transition-transform duration-300 group-hover:scale-105"
                      alt="Service image">

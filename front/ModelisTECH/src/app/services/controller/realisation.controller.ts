@@ -50,15 +50,7 @@ export class RealisationController {
     });
   }
 
-  listWithLimit(limit: number): Observable<Realisation[]> {
-    const params = new HttpParams().set('limit', limit.toString());
-    return this.http.get<Realisation[]>(`${this.BASE_API_URL}${this.API_PATH}`, {
-      params,
-      headers: new HttpHeaders().set('Content-Type', 'application/json')
-    });
-  }
-
-  detail(realisationId: string): Observable<Realisation> {
+  detail(realisationId: number): Observable<Realisation> {
     const params = new HttpParams().set('realisationid', realisationId);
     return this.http.get<Realisation>(`${this.BASE_API_URL}${this.API_PATH}/detail`, {
       headers: new HttpHeaders().set('Content-Type', 'application/json'),

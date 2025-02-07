@@ -7,12 +7,14 @@ import {CarriereComponent} from './page/carriere/carriere.component';
 import {ContactComponent} from './page/contact/contact.component';
 import {AproposComponent} from './page/apropos/apropos.component';
 import {ServicePageComponent} from './page/service-page/service-page.component';
+import {ServiceDetailsComponent} from './page/service-page/service-details/service-details.component';
 
 export const routes: Routes = [
   {path: '', component: AccueilComponent, pathMatch: 'full'},
   {path: 'accueil', component: AccueilComponent},
   {path: 'apropos', component: AproposComponent},
   {path: 'services', component: ServicePageComponent},
+  {path: 'services-details', component: ServiceDetailsComponent},
   {path: 'equipe', component: EquipeComponent},
   {path: 'projets', component: ProjetComponent},
   {path: 'blog', component: BlogComponent},

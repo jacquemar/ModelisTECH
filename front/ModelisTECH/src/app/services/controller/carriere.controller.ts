@@ -9,9 +9,10 @@ import {Observable} from 'rxjs';
 export class CarriereController {
   constructor(private http: HttpClient) {}
   BASE_API_URL = environment.apiUrl;
+  codePays= environment.codePays;
 
   list(): Observable<any> {
-    return this.http.get<any>(this.BASE_API_URL + 'api/offre',{
+    return this.http.get<any>(this.BASE_API_URL + `api/offre/${this.codePays}`,{
         headers: new HttpHeaders().set('Content-Type', 'application/json')
     });
   }

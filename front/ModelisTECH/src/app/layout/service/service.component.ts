@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environment/environment';
+import {RouterLink, Router} from '@angular/router';
+import {ServiceController} from '../../services/controller/service.controller';
 
 interface Service {
   id: number;
@@ -13,69 +15,41 @@ interface Service {
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './service.component.html'
 })
 export class ServicesComponent implements OnInit {
   services: Service[] = [];
   imgBack: string = environment.apiUrl;
+  basePath= '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router, private serviceController: ServiceController) {}
 
   ngOnInit(): void {
-    this.fetchServices();
-  }
+    this.serviceController.list().subscribe({
+      next: (data) => {
+        this.services = data;
+        console.log(this.services);
+      },
+      error: (err) => {
+        console.error('Erreur lors de la récupération des données', err);
 
-  fetchServices(): void {
-    this.http.get<Service[]>(environment.apiUrl+'api/service')
-      .subscribe({
-        next: (data) => {
-
-          this.services = data;
-          console.log(this.services);
-        },
-        error: (err) => {
-          console.error('Erreur lors de la récupération des données', err);
-          this.services = this.getLocalServices();
-        }
-      });
-  }
-
-  // Méthode pour fournir des services locaux en cas d'échec de la récupération
-  getLocalServices(): Service[] {
-    return [
-      {
-        id: 1,
-        libelle: 'DÉVELOPPEMENT DE LOGICIEL',
-        description: 'Nous Développons des logiciels métiers et spécifiques pour tout type de clients. Nos logiciels utilisent à la foi les systèmes libres et propriétaires.',
-        image: '/images/service/2.jpeg'
-      },
-      {
-        id: 2,
-        libelle: 'SYSTÈME D\'INFORMATION GÉOGRAPHIQUE',
-        description: 'Solutions avancées de cartographie et d\'analyse géospatiale.',
-        image: '/images/service/1.jpeg'
-      },
-      {
-        id: 3,
-        libelle: 'FORMATION',
-        description: 'Programmes de formation personnalisés et adaptés à vos besoins.',
-        image: 'images/service/3.png'
-      },
-      {
-        id: 4,
-        libelle: 'HÉBERGEMENT',
-        description: 'Solutions d\'hébergement sécurisées et performantes.',
-        image: 'images/service/4.png'
-      },
-      {
-        id: 5,
-        libelle: 'DEVELOPPEMENT',
-        description: 'Services de développement sur mesure.',
-        image: '/images/service/5.jpg'
       }
-    ];
+    });
   }
+
+  reset(){
+    localStorage.removeItem("serviceId");
+    localStorage.removeItem("retourne");
+  }
+  detail(serviceId:number){
+    this.reset();
+    // @ts-ignore
+    localStorage.setItem("serviceId", serviceId);
+    this.router.navigate(['services-details']);
+    localStorage.setItem("retourne","1");
+  }
+
   scrollLeft(): void {
     const container = document.querySelector('.overflow-x-auto') as HTMLElement;
     container.scrollBy({ left: -300, behavior: 'smooth' });

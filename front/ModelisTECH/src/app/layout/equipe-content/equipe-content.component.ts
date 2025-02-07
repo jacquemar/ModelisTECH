@@ -44,11 +44,12 @@ interface Membre {
 export class EquipeContentComponent implements OnInit{
   membres: Membre[] = [];
   imgBack: string = environment.apiUrl;
+  codePays= environment.codePays;
 
   constructor(private http: HttpClient) {}
 
   fetchEquipe(): void {
-    this.http.get<Membre[]>(environment.apiUrl + 'api/equipe')
+    this.http.get<Membre[]>(environment.apiUrl + `api/equipe/${this.codePays}`)
       .subscribe({
         next: (data) => {
           this.membres = data;

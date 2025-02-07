@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import {FooterComponent} from '../../layout/footer/footer.component';
 import {LocalisationComponent} from '../../layout/localisation/localisation.component';
+import {HttpClient} from '@angular/common/http';
+import {ContactController} from '../../services/controller/contact.controller';
 
 interface InfoContact {
   adresse: string;
@@ -25,15 +27,11 @@ interface ContactMessage {
   imports: [CommonModule, FormsModule, FooterComponent, LocalisationComponent],
   templateUrl: './contact.component.html'
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit{
+  constructor(private http: HttpClient, private contactController: ContactController) {
+  }
   background= 'images/page-bg/contact.jpg';
-  infoContacts: InfoContact[] = [
-    {
-      adresse: '123 Rue de Exemple, 75000 Paris',
-      tel: '+33 1 23 45 67 89',
-      email: 'contact@example.com'
-    }
-  ];
+  contactInfo: any[] = [];
 
   contacts: ContactMessage = {
     nom: '',
@@ -60,5 +58,17 @@ export class ContactComponent {
       this.success = false;
       this.error = true;
     }
+  }
+
+  ngOnInit() {
+    this.contactController.listAll().subscribe({
+      next: (response: any) => {
+        this.contactInfo = response;
+        console.log(this.contactInfo);
+      },
+      error: (error) => {
+        console.error('erreur lors de la récupération des contacts', error)
+      }
+    })
   }
 }

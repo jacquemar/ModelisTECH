@@ -1,24 +1,34 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {ContactController} from '../../services/controller/contact.controller';
+import {CommonModule} from '@angular/common';
+import {compileNgModule} from '@angular/compiler';
+
 
 @Component({
   selector: 'app-header',
+  imports:[CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent implements OnInit{
-  contacts!: number;
-  email!: string;
-  adresse!: string;
-  pays!: string;
-  ContactList!: any[];
+
+
+  constructor(private http: HttpClient, private contactController: ContactController) {
+  }
+  contacts: any[] = [];
 
   ngOnInit(): void{
-    this.ContactList = [
-      this.contacts = 2721748434,
-      this.adresse = 'Cocody faya en face de la clinique bon samaritain',
-      this.email = 'contacts@modelis-tech.com',
-      this.pays = 'CIV',
-    ];
+
+    this.contactController.listAll().subscribe({
+      next:(response: any) => {
+        this.contacts = response;
+        console.log(this.contacts)
+      },
+        error:(error) => {
+        console.error('erreur lors de la recuperation des contacts', error)
+        }
+    })
 
   }
 }
