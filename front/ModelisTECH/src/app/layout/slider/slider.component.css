@@ -1,15 +1,23 @@
-:host ::ng-deep .swiper-button-next::after,
-:host ::ng-deep .swiper-button-prev::after {
-  display: none;
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-:host ::ng-deep .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  background: #4F46E5;
-  opacity: 0.2;
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-:host ::ng-deep .swiper-pagination-bullet-active {
-  opacity: 1;
+.divider {
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(to right, #ff8a00, #e52e71);
+  margin: 10px auto;
+  border-radius: 2px;
 }

@@ -1,0 +1,36 @@
+<nav class="fixed top-0 left-0 w-full z-50 bg-black/30 dark:bg-gray-800/30 backdrop-blur-md  dark:border-gray-700">
+  <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0 py-4">
+    <div class="flex items-center justify-center">
+
+      <div class="flex items-center space-x-8">
+        <div class="shrink-0">
+          <a href="/" title="">
+            <img class="block w-auto h-16 dark:hidden" [src]="logoImage" alt="">
+            <img class="hidden w-auto h-16 dark:block" [src]="logoImage" alt="">
+          </a>
+        </div>
+
+        <ul id="navElements" class="hidden lg:flex items-center justify-center gap-6 md:gap-8 py-3 sm:justify-center">
+          <li><a href="/" class="text-sm font-medium text-white hover:text-base1 dark:text-white dark:hover:text-primary-500">Accueil</a></li>
+          <li><a href="/apropos" class="text-sm font-medium text-white hover:text-base1 dark:text-white dark:hover:text-primary-500">À Propos</a></li>
+          <li><a href="/services" class="text-sm font-medium text-white hover:text-base1 dark:text-white dark:hover:text-primary-500">Services</a></li>
+          <li><a href="/equipe" class="text-sm font-medium text-white hover:text-base1 dark:text-white dark:hover:text-primary-500">Équipe</a></li>
+          <li><a href="/projets" class="text-sm font-medium text-white hover:text-base1 dark:text-white dark:hover:text-primary-500">Projet</a></li>
+          <li><a href="/carriere" class="text-sm font-medium text-white hover:text-base1 dark:text-white dark:hover:text-primary-500">Carrière</a></li>
+        </ul>
+      </div>
+
+      <div class="flex items-center lg:space-x-2">
+        <button type="button" class="inline-flex items-center rounded-lg justify-center p-3 mx-6 bg-base1 hover:bg-gray-100 hover:text-black dark:hover:bg-gray-700 text-sm font-medium leading-none text-white dark:text-white">
+          Nous contacter
+        </button>
+
+        <button type="button" data-collapse-toggle="navElements" aria-controls="navElements" aria-expanded="false" class="inline-flex lg:hidden items-center justify-center hover:bg-gray-100 rounded-md dark:hover:bg-gray-700 p-2 text-gray-900 dark:text-white">
+          <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

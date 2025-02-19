@@ -1,48 +1,161 @@
-<section class="w-full py-20">
-    <!-- En-tête -->
-    <div class="mb-16">
-      <h1 class="text-4xl font-bold text-center text-gray-900">
-        QUI SOMMES NOUS ?
-      </h1>
+<section #aboutSection id="next-section" class="w-full bg-gradient-to-r from-[#dfe2fe] via-[#b1cbfa] to-[#8e98f5] py-20">
+  <div class="container mx-auto px-4 items-center">
+
+    <!-- GRID PRINCIPALE IMAGE + TEXTE -->
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Image avec animation -->
+      <div class="flex justify-center">
+        <img #animatedImage [src]="imgPath" alt="Le groupe Modelis"
+             class="max-w-full h-auto transform transition-all duration-700 ease-out">
+      </div>
+
+      <!-- Texte -->
+      <div #textContent class="space-y-6 w-5/6 font-poppins text-center lg:text-left">
+        <h2 class="text-5xl font-black uppercase text-gray-800 mb-4">
+          Satisfaction cliente au cœur
+        </h2>
+        <h1 class="text-4xl font-semibold text-gray-800">
+          de notre démarche
+        </h1>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          MODELIS GIS a été créé en 2011 avec pour champ d'action toutes les composantes de l'information géographique.
+        </p>
+      </div>
     </div>
-  
-    <!-- Contenu principal -->
-    <div class="container mx-auto px-4">
-      <div #animatedSection 
-           class="grid lg:grid-cols-2 gap-12 items-start transform transition-all duration-[5000ms] ease-out"
-           [class.-translate-x-[200%]]="!isVisible"
-           [class.translate-x-0]="isVisible"
-           [class.opacity-0]="!isVisible"
-           [class.opacity-100]="isVisible">
-        <!-- Image -->
-        <div class="flex justify-center">
-          <img 
-            [src]="imgPath" 
-            alt="Président de Modelis-Tech" 
-            class="max-w-full h-auto shadow-lg"
-          >
-        </div>
-  
-        <!-- Texte -->
-        <div class="space-y-6 w-5/6 font-poppins">
-          <h2 class="text-3xl font-semibold text-gray-800 mb-6">
-            BIENVENUE SUR MODELIS-TECH
-          </h2>
-          
-          <div class="space-y-4 text-justify">
-            <p class="text-base text-gray-500 leading-relaxed">
-              MODELIS GIS a été crée en 2011 avec pour champ d'action toutes les
-              composantes métiers de l'information géographique. Durant 4 années, l'entreprise a développé cette activité
-              en accompagnant aussi bien les entreprises privées que les administrations.
-            </p>
-            
-            <p class="text-base text-gray-500 leading-relaxed">
-              En 2015, la direction a décidé de spécialiser ses actions. C'est
-              ainsi que MODELIS TECH a vu le jour avec comme spécialités les Systèmes d'Information Géographique en
-              particulier et les nouvelles technologies en générale.
-            </p>
+
+    <div class="mt-6 flex flex-wrap justify-center gap-6">
+      <!-- Mission -->
+      <div class="glass-card">
+        <h3 class="card-title">Mission</h3>
+        <div class="divider"></div>
+        <ul class="card-content">
+          <li>Démocratiser l'accès</li>
+          <li>à l'information</li>
+          <li>géographique</li>
+        </ul>
+      </div>
+
+      <!-- Vision -->
+      <div class="glass-card">
+        <h3 class="card-title">Vision</h3>
+        <div class="divider"></div>
+        <ul class="card-content">
+          <li>Révolutionner la</li>
+          <li>Compréhension du monde</li>
+          <li>grâce à la Géomatique</li>
+        </ul>
+      </div>
+
+      <!-- Valeurs -->
+      <div class="glass-card">
+        <h3 class="card-title">Valeurs</h3>
+        <div class="divider"></div>
+        <ul class="card-content">
+          <li>Expertise, Respect</li>
+          <li>Objectivité, pragmatisme</li>
+          <li>Intégrité</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Texte Domains piliers -->
+    <div class="max-w-3xl mx-auto font-poppins text-center mt-24">
+      <div id="domainesPiliers" class="opacity-0 scale-50">
+        <h2 class="text-6xl font-black uppercase text-gray-800 mb-4">
+          Créé et développé autour
+        </h2>
+        <h1 class="text-4xl font-semibold text-base1">
+          de 3 Domaines piliers
+        </h1>
+      </div>
+      <div>
+        <p class="text-lg text-gray-700 mt-14 leading-relaxed">
+          Notre motivation et celle de nos équipes au quotidien : offrir la plus grande valeur ajoutée à nos clients.
+        </p>
+      </div>
+    </div>
+
+    <!-- Pilier cards affichées horizontalement -->
+    <div class="flex flex-wrap justify-center mb-28 gap-6 mt-10">
+      <div class="flip-card relative w-full max-w-sm"
+        (mouseenter)="flip($event)"
+        (mouseleave)="unflip($event)">
+        <div class="flip-inner">
+          <!-- Face avant : l'image -->
+          <div class="flip-front">
+            <img [src]="imgCard1" alt="Image 1"
+                 class="w-full rounded-lg shadow-[43px_23px_207px_34px_rgba(165,_39,_255,_0.48)]">
+            <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-40  rounded-lg">
+              <h2 class="text-white text-xl font-bold">TOPOGRAPHIE</h2>
+              <div class="w-16 h-1 bg-white my-2"></div>
+              <p class="text-white text-sm"></p>
+            </div>
+          </div>
+          <!-- Face arrière : le texte explicatif -->
+          <div class="flip-back">
+            <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-40 backdrop-blur-[2px] rounded-lg">
+              <h2 class="text-white text-xl font-bold">GÉNIE CIVIL</h2>
+              <div class="w-16 h-1 bg-white my-2"></div>
+              <p class="text-white text-sm"></p>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- Card 2 -->
+      <div class="flip-card relative w-full max-w-sm"
+           (mouseenter)="flip($event)"
+           (mouseleave)="unflip($event)">
+        <div class="flip-inner">
+          <!-- Face avant : l'image -->
+          <div class="flip-front">
+            <img [src]="imgCard2" alt="Image 1"
+                 class="w-full rounded-lg shadow-[43px_23px_207px_34px_rgba(165,_39,_255,_0.48)]">
+            <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-40 rounded-lg">
+              <h2 class="text-white text-xl font-bold">GÉNIE CIVIL</h2>
+              <div class="w-16 h-1 bg-white my-2"></div>
+              <p class="text-white text-sm"></p>
+            </div>
+          </div>
+          <!-- Face arrière : le texte explicatif -->
+          <div class="flip-back">
+            <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-40 backdrop-blur-[2px] rounded-lg">
+              <h2 class="text-white text-xl font-bold">Génie civil</h2>
+              <div class="w-16 h-1 bg-white my-2"></div>
+              <p class="text-white text-sm">Modelis Gc</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <!-- Card 3 -->
+      <div class="flip-card relative w-full max-w-sm"
+           (mouseenter)="flip($event)"
+           (mouseleave)="unflip($event)">
+        <div class="flip-inner">
+          <!-- Face avant : l'image -->
+          <div class="flip-front">
+            <img [src]="imgCard3" alt="Image 3"
+                 class="w-full rounded-lg shadow-[43px_23px_207px_34px_rgba(165,_39,_255,_0.48)]">
+            <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30 rounded-lg">
+              <h2 class="text-white text-xl font-bold">TECHNOLOGIE</h2>
+              <div class="w-16 h-1 bg-white my-2"></div>
+              <p class="text-white text-sm"></p>
+            </div>
+          </div>
+          <!-- Face arrière : le texte explicatif -->
+          <div class="flip-back">
+            <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30 backdrop-blur-[2px] rounded-lg">
+              <h2 class="text-white text-xl font-bold">TECHNOLOGIE</h2>
+              <div class="w-16 h-1 bg-white my-2"></div>
+              <p class="text-white text-sm">Description technologie</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
+
+  </div>
+</section>

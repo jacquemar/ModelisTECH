@@ -1,42 +1,127 @@
 import { CommonModule } from '@angular/common';
-import { Component, ViewChild, OnInit, ElementRef } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-about',
-  imports: [CommonModule],
   standalone: true,
+  imports: [CommonModule],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.css'
+  styleUrls: ['./about.component.css']  // Remarquez bien le "s"
 })
-export class AboutComponent implements OnInit {
-  imgPath = '/images/page-bg/president.png';
-  isVisible = false;
+export class AboutComponent implements AfterViewInit {
+  imgPath = '/images/page-bg/tout-MODELIS.png';
+  imgCard1 = '/images/page-bg/genie-civil.jpg';
+  imgCard2 = '/images/page-bg/geo.jpg';
+  imgCard3 = '/images/page-bg/ingenieurs-tech.jpg';
 
-  @ViewChild('animatedSection') animatedSection!: ElementRef;
+  @ViewChild('animatedImage') animatedImage!: ElementRef;
+  @ViewChild('aboutSection', { static: true }) aboutSection!: ElementRef;
+  @ViewChild('textContent', { static: true }) textContent!: ElementRef;
 
-  ngOnInit(): void {
-    // Définir isVisible à false initialement
-    this.isVisible = false;
+  ngAfterViewInit() {
+    if (this.animatedImage) {
+      // Animation de l'image
+      gsap.fromTo(
+        this.animatedImage.nativeElement,
+        { opacity: 0, x: -50, rotate: -5 },
+        {
+          opacity: 1,
+          x: 0,
+          rotate: 0,
+          duration: 0.5,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: this.animatedImage.nativeElement,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Ajouter un petit délai pour s'assurer que la transition s'applique
-          setTimeout(() => {
-            this.isVisible = true;
-          }, 100);
+      // Animation de flottement de l'image
+      gsap.to(this.animatedImage.nativeElement, {
+        y: -10,
+        scrollTrigger: {
+          trigger: this.animatedImage.nativeElement,
+          start: 'top bottom',
+          scrub: true
         }
       });
-    }, {
-      threshold: 0.1,
-      rootMargin: '40px' // Déclenche un peu plus tôt
-    });
 
-    // Augmenter le délai pour s'assurer que le DOM est prêt
-    setTimeout(() => {
-      if (this.animatedSection) {
-        observer.observe(this.animatedSection.nativeElement);
-      }
-    }, 200);
+      // Animation unique pour domainesPiliers
+      gsap.fromTo(
+        "#domainesPiliers",
+        {
+          opacity: 0,
+          scale: 0.8,
+          y: 50 // Ajout d'un mouvement vertical
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: "#domainesPiliers",
+            start: "top 80%",
+            end: "+=300", // Animation sur 300px de scroll
+            scrub: false, // Désactivation du scrub pour une animation unique
+            toggleActions: "play none none none" // L'animation se joue une fois et reste en place
+          }
+        }
+      );
+
+      // Animation du texte content
+      gsap.fromTo(
+        this.textContent.nativeElement,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: this.aboutSection.nativeElement,
+            start: 'top 80%',
+            end: 'center center',
+            scrub: true
+          }
+        }
+      );
+    }
+  }
+
+  /**
+   * Déclenche l'animation flip lors du survol de la carte.
+   * @param event MouseEvent
+   */
+  flip(event: Event) {
+    const cardElement = (event.currentTarget as HTMLElement).querySelector('.flip-inner');
+    if (cardElement) {
+      gsap.to(cardElement, {
+        rotationY: 180,
+        duration: 0.7,
+        ease: 'power2.out'
+      });
+    }
+  }
+
+  /**
+   * Remet la carte à sa position initiale lorsque le survol se termine.
+   * @param event MouseEvent
+   */
+  unflip(event: Event) {
+    const cardElement = (event.currentTarget as HTMLElement).querySelector('.flip-inner');
+    if (cardElement) {
+      gsap.to(cardElement, {
+        rotationY: 0,
+        duration: 0.7,
+        ease: 'power2.out'
+      });
+    }
   }
 }

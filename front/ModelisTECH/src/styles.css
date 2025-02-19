@@ -1,12 +1,39 @@
+@import "flowbite/src/themes/default.css";
 @import 'swiper/css';
 @import 'swiper/css/navigation';
 @import 'swiper/css/pagination';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
 
 
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.divider {
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(to right, #ff8a00, #e52e71);
+  margin: 10px auto;
+  border-radius: 2px;
+}
+
 
