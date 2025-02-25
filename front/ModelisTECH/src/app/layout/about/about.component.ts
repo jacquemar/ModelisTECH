@@ -68,9 +68,9 @@ export class AboutComponent implements AfterViewInit {
           scrollTrigger: {
             trigger: "#domainesPiliers",
             start: "top 80%",
-            end: "+=300", // Animation sur 300px de scroll
-            scrub: false, // Désactivation du scrub pour une animation unique
-            toggleActions: "play none none none" // L'animation se joue une fois et reste en place
+            end: "+=300",
+            scrub: false,
+            toggleActions: "play none none none"
           }
         }
       );
@@ -99,6 +99,7 @@ export class AboutComponent implements AfterViewInit {
    * Déclenche l'animation flip lors du survol de la carte.
    * @param event MouseEvent
    */
+
   flip(event: Event) {
     const cardElement = (event.currentTarget as HTMLElement).querySelector('.flip-inner');
     if (cardElement) {
@@ -114,6 +115,7 @@ export class AboutComponent implements AfterViewInit {
    * Remet la carte à sa position initiale lorsque le survol se termine.
    * @param event MouseEvent
    */
+
   unflip(event: Event) {
     const cardElement = (event.currentTarget as HTMLElement).querySelector('.flip-inner');
     if (cardElement) {

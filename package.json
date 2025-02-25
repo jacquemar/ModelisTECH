@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "lottie-web": "^5.12.2",
+    "ngx-lottie": "^13.0.0"
+  }
+}

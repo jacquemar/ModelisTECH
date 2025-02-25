@@ -12,12 +12,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent],
+  imports: [RouterOutlet, NavbarComponent,],
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
 
-  title = 'ModelisTECH';
+  title = 'ModelisGroup';
 }

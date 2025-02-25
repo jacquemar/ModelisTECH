@@ -9,6 +9,7 @@ import {list} from 'postcss';
 
 @Component({
   selector: 'app-navbar',
+  standalone: true,
   imports: [
 
     CommonModule
@@ -22,10 +23,6 @@ export class NavbarComponent implements OnInit {
   logoImage:any;
 
   constructor( private http: HttpClient, private contactController: ContactController ) {}
-
-  navItems= [
-
-  ]
 
   ngOnInit() {
     this.logoImage = `images/logos/${this.codePays}-logo2.png`;

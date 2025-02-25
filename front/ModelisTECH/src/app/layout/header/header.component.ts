@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ContactController} from '../../services/controller/contact.controller';
 import {CommonModule} from '@angular/common';
-import {compileNgModule} from '@angular/compiler';
 
 
 @Component({
   selector: 'app-header',
+  standalone: true,
   imports:[CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'

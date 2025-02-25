@@ -76,7 +76,7 @@
     </div>
 
     <!-- Pilier cards affichées horizontalement -->
-    <div class="flex flex-wrap justify-center mb-28 gap-6 mt-10">
+    <div class="flex flex-wrap justify-center mb-44 gap-6 mt-10">
       <div class="flip-card relative w-full max-w-sm"
         (mouseenter)="flip($event)"
         (mouseleave)="unflip($event)">
@@ -91,7 +91,7 @@
               <p class="text-white text-sm"></p>
             </div>
           </div>
-          <!-- Face arrière : le texte explicatif -->
+          <!-- Face arrière -->
           <div class="flip-back">
             <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-40 backdrop-blur-[2px] rounded-lg">
               <h2 class="text-white text-xl font-bold">GÉNIE CIVIL</h2>
@@ -107,7 +107,7 @@
            (mouseenter)="flip($event)"
            (mouseleave)="unflip($event)">
         <div class="flip-inner">
-          <!-- Face avant : l'image -->
+          <!-- Face avant -->
           <div class="flip-front">
             <img [src]="imgCard2" alt="Image 1"
                  class="w-full rounded-lg shadow-[43px_23px_207px_34px_rgba(165,_39,_255,_0.48)]">
@@ -117,7 +117,7 @@
               <p class="text-white text-sm"></p>
             </div>
           </div>
-          <!-- Face arrière : le texte explicatif -->
+          <!-- Face arrière -->
           <div class="flip-back">
             <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-40 backdrop-blur-[2px] rounded-lg">
               <h2 class="text-white text-xl font-bold">Génie civil</h2>
@@ -127,14 +127,12 @@
           </div>
         </div>
       </div>
-
-      <!-- Card 3 -->
       <!-- Card 3 -->
       <div class="flip-card relative w-full max-w-sm"
            (mouseenter)="flip($event)"
            (mouseleave)="unflip($event)">
         <div class="flip-inner">
-          <!-- Face avant : l'image -->
+          <!-- Face avant -->
           <div class="flip-front">
             <img [src]="imgCard3" alt="Image 3"
                  class="w-full rounded-lg shadow-[43px_23px_207px_34px_rgba(165,_39,_255,_0.48)]">
@@ -144,7 +142,8 @@
               <p class="text-white text-sm"></p>
             </div>
           </div>
-          <!-- Face arrière : le texte explicatif -->
+
+          <!-- Face arrière -->
           <div class="flip-back">
             <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30 backdrop-blur-[2px] rounded-lg">
               <h2 class="text-white text-xl font-bold">TECHNOLOGIE</h2>
@@ -156,6 +155,10 @@
       </div>
 
     </div>
+
+    <div class="mx-12 -mt-20 text-lg font-poppins ">
+    <h1> Le groupe Modelis s'est créé et se développe autour d'une unique motivation : répondre aux besoins de nos clients. C'est pourquoi, il s'est adapté au fil des années en spécialisant ses équipes autour des trois domaines prioritaires : la topographie, la géomatique et le génie civil.
+      Partout où le groupe Modelis ira, le client sera toujours au cœur de notre attention. C'est notre motivation et celle de nos équipes au quotidien.</h1></div>
 
   </div>
 </section>
