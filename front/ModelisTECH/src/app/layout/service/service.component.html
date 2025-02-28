@@ -12,85 +12,173 @@
 
     <!-- Section Collecter -->
     <div class="relative mb-24">
-      <!-- Div avec effet glass -->
-      <div class="w-70% h-96 mx-12 bg-gray-100/20 backdrop-blur-sm shadow-xl ring-1 ring-indigo-600 rounded-xl p-8">
+      <!-- Div principale -->
+      <div class="w-70% h-96 mx-12 ring-1 ring-indigo-600 rounded-xl p-8 relative"
+           style="background-image: url('/images/service/collecter3.jpg'); background-size: cover;">
+        <!-- Overlay noir léger -->
+        <div class="absolute inset-0 bg-black/20 rounded-xl"></div>
 
         <!-- Contenu texte -->
-        <div class="w-1/2 justify-center ml-28 mt-6">
-          <h2 class="uppercase font-black font-poppins text-5xl mb-4 text-indigo-900">Collecter</h2>
-          <ul class="space-y-2 text-xl mb-6">
-            <li class="flex items-center list-none text-gray-700">
-              <span class="w-2 h-2 bg-base1 rounded-full mr-4"></span>
+        <div class="w-1/2 justify-center ml-28 mt-6 relative z-10">
+          <h2 class="uppercase font-black font-poppins text-6xl mb-4 text-white">Collecter</h2>
+          <ul class="space-y-2 text-white list-none text-xl mb-6">
+            <li class="flex items-center ">
+              <span class="w-2 h-2 bg-orange-500 rounded-full mr-4"></span>
               Collecte de données de terrain
             </li>
-            <li class="flex items-center text-gray-700">
-              <span class="w-2 h-2 bg-base1 rounded-full mr-4"></span>
+            <li class="flex items-center ">
+              <span class="w-2 h-2 bg-orange-500 rounded-full mr-4"></span>
               Travaux de topographie
             </li>
-            <li class="flex items-center text-gray-700">
-              <span class="w-2 h-2 bg-base1 rounded-full mr-4"></span>
+            <li class="flex items-center ">
+              <span class="w-2 h-2 bg-orange-500 rounded-full mr-4"></span>
               Vente et location d'appareil de mesure
             </li>
-            <li class="flex items-center text-gray-700">
-              <span class="w-2 h-2 bg-base1 rounded-full mr-4"></span>
+            <li class="flex items-center ">
+              <span class="w-2 h-2 bg-orange-500 rounded-full mr-4"></span>
               Maintenance et réparation d'appareil
             </li>
           </ul>
 
-          <button class="bg-indigo-900 text-white hover:text-black
+          <button class="bg-base1 border border-orange-500 border-1 text-white hover:text-white
                      px-6 py-2 rounded-md hover:bg-opacity-20 transition-all duration-300 w-fit">
             Parcourir nos projets ..
           </button>
         </div>
       </div>
-
       <!-- Canvas flottant -->
       <div class="absolute right-0 -top-24">
         <canvas id="collecter-canvas" class="w-[625px] h-[625px]"></canvas>
       </div>
     </div>
+
+
+
     <!-- Section Traiter -->
     <div class="relative mb-24">
-      <!-- Div avec effet glass -->
-      <div class="w-70% h-96 mx-8 bg-white/20 backdrop-blur-lg shadow-xl ring-1 ring-indigo-600 rounded-xl p-8">
-        <!-- Canvas flottant -->
-        <div class="absolute right-0 top-5 mr-32">
-          <canvas id="traiter-canvas" class="w-[325px] h-[325px]"></canvas>
-        </div>
+      <!-- Div principale -->
+      <div class="w-70% h-96 mx-12 ring-1 ring-indigo-600 rounded-xl p-8 relative"
+           style="background-image: url('/images/service/collecter4.jpg'); background-size: cover;">
+        <!-- Overlay noir léger -->
+        <div class="absolute inset-0 bg-black/20 rounded-xl"></div>
 
         <!-- Contenu texte -->
-        <div class="w-1/2 justify-center ml-28 mt-8 flex flex-col">
-          <h2 class="uppercase font-black font-poppins text-5xl mb-4 text-indigo-900">Traiter</h2>
-          <ul class="space-y-2 text-xl mb-6">
-            <li class="flex items-center list-none text-gray-700">
-              <span class="w-2 h-2 bg-base1 rounded-full mr-4"></span>
-              Collecte de données de terrain
+        <div class="w-1/2 justify-center ml-28 mt-6 relative z-10">
+          <h2 class="uppercase font-black font-poppins text-6xl mb-4 text-white">Traiter</h2>
+          <ul class="space-y-2 text-white list-none text-xl mb-6">
+            <li class="flex items-center ">
+              <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+              Analyse Spatiale
             </li>
-            <li class="flex items-center text-gray-700">
-              <span class="w-2 h-2 bg-base1 rounded-full mr-4"></span>
-              Travaux de topographie
+            <li class="flex items-center ">
+              <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+              Intégration de données
             </li>
-            <li class="flex items-center text-gray-700">
-              <span class="w-2 h-2 bg-base1 rounded-full mr-4"></span>
-              Vente et location d'appareil de mesure
+            <li class="flex items-center ">
+              <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+              Intégration et customisation de solutions
             </li>
-            <li class="flex items-center text-gray-700">
-              <span class="w-2 h-2 bg-base1 rounded-full mr-4"></span>
-              Maintenance et réparation d'appareil
+            <li class="flex items-center ">
+              <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+              Développement de solution métiers (cadrastre, Administration foncière, Défense environnementale)
             </li>
           </ul>
 
-          <!-- Bouton parcourir -->
-          <button class="bg-indigo-900 text-white hover:text-black
+          <button class="bg-base1 border border-1 text-white hover:text-white
                      px-6 py-2 rounded-md hover:bg-opacity-20 transition-all duration-300 w-fit">
             Parcourir nos projets ..
           </button>
         </div>
       </div>
+      <!-- Canvas flottant -->
+      <div class="absolute left-96 -bottom-80 ">
+        <canvas id="traiter-canvas" class="w-[1050px] h-[1050px]"></canvas>
+      </div>
     </div>
 
+    <!-- Section Diffuser -->
+    <div class="relative mb-24">
+      <!-- Div principale -->
+      <div class="w-70% h-96 mx-12 ring-1 ring-indigo-600 rounded-xl p-8 relative"
+           style="background-image: url('/images/service/diffuser2.jpg'); background-size: cover;">
+        <!-- Overlay noir léger -->
+        <div class="absolute inset-0 bg-black/20 rounded-xl"></div>
 
+        <!-- Contenu texte -->
+        <div class="w-1/2 justify-center ml-28 mt-6 relative z-10">
+          <h2 class="uppercase font-black font-poppins text-6xl mb-4 text-white">Diffuser</h2>
+          <ul class="space-y-2 text-white list-none text-xl mb-6">
+            <li class="flex items-center ">
+              <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+              Système d'information géographique
+            </li>
+            <li class="flex items-center ">
+              <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+              Cartographie
+            </li>
+            <li class="flex items-center ">
+              <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+              Applications Web/Mobile
+            </li>
+            <li class="flex items-center ">
+              <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+              Formations
+            </li>
+          </ul>
 
+          <button class="bg-base1 border border-1 text-white hover:text-white
+                     px-6 py-2 rounded-md hover:bg-opacity-20 transition-all duration-300 w-fit">
+            Parcourir nos projets ..
+          </button>
+        </div>
+      </div>
+      <!-- Canvas flottant -->
+      <div class="absolute right-36 -bottom-20 ">
+        <canvas id="diffuser-canvas" class="w-[550px] h-[550px]"></canvas>
+      </div>
+    </div>
+
+    <!-- Section Construire -->
+    <div class="relative mb-24">
+      <!-- Div principale -->
+      <div class="w-70% h-96 mx-12 ring-1 ring-indigo-600 rounded-xl p-8 relative"
+           style="background-image: url('/images/service/collecter4.jpg'); background-size: cover;">
+        <!-- Overlay noir léger -->
+        <div class="absolute inset-0 bg-black/20 rounded-xl"></div>
+
+        <!-- Contenu texte -->
+        <div class="w-1/2 justify-center ml-28 mt-6 relative z-10">
+          <h2 class="uppercase font-black font-poppins text-6xl mb-4 text-white">Construire</h2>
+          <ul class="space-y-2 text-white list-none text-xl mb-6">
+            <li class="flex items-center ">
+              <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+              Analyse Spatiale
+            </li>
+            <li class="flex items-center ">
+              <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+              Intégration de données
+            </li>
+            <li class="flex items-center ">
+              <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+              Intégration et customisation de solutions
+            </li>
+            <li class="flex items-center ">
+              <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+              Développement de solution métiers (cadrastre, Administration foncière, Défense environnementale)
+            </li>
+          </ul>
+
+          <button class="bg-base1 border border-1 text-white hover:text-white
+                     px-6 py-2 rounded-md hover:bg-opacity-20 transition-all duration-300 w-fit">
+            Parcourir nos projets ..
+          </button>
+        </div>
+      </div>
+      <!-- Canvas flottant -->
+      <div class="absolute left-96 -bottom-80 ">
+        <canvas id="construire-canvas" class="w-[1050px] h-[1050px]"></canvas>
+      </div>
+    </div>
 
     <!-- Bouton voir tous les services -->
     <div class="mt-12 flex justify-end">

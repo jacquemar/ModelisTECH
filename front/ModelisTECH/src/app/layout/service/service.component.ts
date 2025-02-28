@@ -23,14 +23,12 @@ export class ServicesComponent implements OnInit, AfterViewInit {
   services: Service[] = [];
   imgBack: string = environment.apiUrl;
   basePath = '';
-  collecter = 'images/service/collecter.svg';
-  traiter = 'images/service/traiter.png';
-  diffuser = 'images/service/diffuser.svg';
-  construire = 'images/service/construire.svg';
+  backgroundImage: string = '/images/services/traiter.jpg';
+
   dotLottieCollecter: DotLottie | undefined;
   dotLottieTraiter: DotLottie | undefined;
-
-  dotLottie: DotLottie | undefined;
+  dotLottieDiffuser: DotLottie | undefined;
+  dotLottieConstruire: DotLottie | undefined;
 
   constructor(
     private http: HttpClient,
@@ -59,12 +57,10 @@ export class ServicesComponent implements OnInit, AfterViewInit {
           autoplay: true,
           loop: true,
           canvas: canvasCollecter as HTMLCanvasElement,
-          src: "https://lottie.host/ef858f9b-ea26-4c20-80b4-3786fdc20e21/MqGRaSJr8m.lottie",
+          src: "https://lottie.host/f2d5c661-2e5b-4dbc-90da-4bcf070c2387/ShBLt5ZtfF.lottie",
         });
       }
     }, 0);
-
-
 
     // Deuxième animation (Traiter)
     setTimeout(() => {
@@ -74,7 +70,33 @@ export class ServicesComponent implements OnInit, AfterViewInit {
           autoplay: true,
           loop: true,
           canvas: canvasTraiter as HTMLCanvasElement,
-          src: "https://lottie.host/0dcd76ae-6f54-45b5-a71e-70ff4186f154/TUzoFYD61V.lottie",
+          src: "https://lottie.host/27558cf3-38d0-4b58-96da-8de290e2a3b7/ZgFAxYzCZp.lottie",
+        });
+      }
+    }, 0);
+
+    // Troisièm animation (Diffuser)
+    setTimeout(() => {
+      const canvasDiffuser = document.querySelector('#diffuser-canvas');
+      if (canvasDiffuser) {
+        this.dotLottieTraiter = new DotLottie({
+          autoplay: true,
+          loop: true,
+          canvas: canvasDiffuser as HTMLCanvasElement,
+          src: "https://lottie.host/3d5dc160-3696-42b0-b2f3-1956fb57d37c/AYEidzPnM9.lottie",
+        });
+      }
+    }, 0);
+
+    // derniere animation (Construire)
+    setTimeout(() => {
+      const canvasConstruire = document.querySelector('#construire-canvas');
+      if (canvasConstruire) {
+        this.dotLottieTraiter = new DotLottie({
+          autoplay: true,
+          loop: true,
+          canvas: canvasConstruire as HTMLCanvasElement,
+          src: "https://lottie.host/27558cf3-38d0-4b58-96da-8de290e2a3b7/ZgFAxYzCZp.lottie",
         });
       }
     }, 0);
