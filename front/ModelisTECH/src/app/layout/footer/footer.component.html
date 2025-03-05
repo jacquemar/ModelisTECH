@@ -1,85 +1,106 @@
-<footer id="colophon" class="site-footer font-poppins bg-base1 text-white py-10" role="contentinfo">
-  <div class="container mx-auto px-4 mt-20 mb-12">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-      <!-- Logo et texte -->
-      <div class="widget text-justify ml-8">
-        <div class="textwidget mb-4">
-          <img [src]="logoImage" alt="Logo" class="bg-white w-56 mx-auto mb-4">
-          <p class="text-base mt-16 ">
-            L'équipe technique de MODELIS TECH vous accompagne dans la réalisation de vos logiciels
-            d'entreprise qu'ils soient spécifiques à un métier ou pas.
-          </p>
-        </div>
+<!-- Footer principal avec fond bleu foncé -->
+<footer class="bg-base1 text-white">
+  <!-- Section du logo et réseaux sociaux -->
+  <div class="w-4/5 mx-auto px-4 py-6">
+    <div class="flex justify-between items-center">
+      <!-- Logo -->
+      <div>
+        <img src="/images/logos/CIV-logo2.png" alt="Logo" class="h-16">
       </div>
-
-      <!-- Menu -->
-      <div class="widget ml-4">
-        <h3 class="text-xl font-semibold mb-4">Menu</h3>
-        <div class="textwidget text-base font-light">
-          <ul class="space-y-2 opacity-70">
-            <li><a routerLink="/accueil" class=" hover:text-yellow-400 ">Accueil</a><hr class="mt-2"></li>
-            <li><a routerLink="/apropos"  class=" hover:text-yellow-400">A propos</a><hr class="mt-2"></li>
-            <li><a routerLink="/expertises"  class=" hover:text-yellow-400">Services</a><hr class="mt-2"></li>
-            <li><a routerLink="/equipe"  class="hover:text-yellow-400">Equipe</a><hr class="mt-2"></li>
-            <li><a routerLink="/Projets"  class=" hover:text-yellow-400">Projets</a><hr class="mt-2"></li>
-            <li><a routerLink="/blog" class="hover:text-yellow-400">Blog</a><hr class="mt-2"></li>
-            <li><a routerLink="/carriere" class=" hover:text-yellow-400">Carrière</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Liens utiles -->
-      <div class="widget">
-        <h3 class="text-xl font-semibold mb-4">Liens utiles</h3>
-        <div class="textwidget text-base font-light">
-          <ul class="space-y-2 opacity-70">
-            <li><a routerLink="/accueil" class=" hover:text-yellow-400 ">Modelis-Gc</a><hr class="mt-2"></li>
-            <li><a routerLink="/apropos"  class=" hover:text-yellow-400">Modelis-Group</a><hr class="mt-2"></li>
-            <li><a routerLink="/expertises"  class=" hover:text-yellow-400">Modelis-Tech</a><hr class="mt-2"></li>
-            <li><a routerLink="/expertises"  class=" hover:text-yellow-400">Modelis-Gis</a></li>
-
-          </ul>
-        </div>
-      </div>
-
-      <!-- Publications récentes -->
-      <div class="widget">
-        <h3 class="text-xl font-semibold mb-4">Récentes publications</h3>
-        <ul class="space-y-4">
-          <li class="flex justify-between items-center">
-            <div class="gem-pp-posts-text">
-              <div class="gem-pp-posts-item">
-                <a  class="text-lg hover:text-yellow-400" ></a>
-              </div>
-              <div class="gem-pp-posts-date text-sm text-gray-400" >
-                <ul class="space-y-2 opacity-70"  *ngFor="let blog of blogs">
-                  <li>
-                    <a routerLink="/accueil" class=" hover:text-yellow-400" [innerHTML]="blog.description.slice(0, 50) + ' ... ' "> </a><hr class="mt-2">
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </li>
-        </ul>
+      <!-- Réseaux sociaux -->
+      <div class="flex items-center gap-4">
+        <a href="#" class="hover:opacity-80 transition-opacity">
+          <img src="/images/icons/facebook-new.png" alt="Facebook" class="h-8 w-8 object-contain">
+        </a>
+        <a href="#" class="hover:opacity-80 transition-opacity">
+          <img src="/images/icons/linkedin.png" alt="LinkedIn" class="h-8 w-8 object-contain">
+        </a>
+        <a href="#" class="hover:opacity-80 transition-opacity">
+          <img src="/images/icons/mail.png" alt="Email" class="h-8 w-8 object-contain">
+        </a>
       </div>
     </div>
   </div>
-</footer>
 
-<!-- Footer Navigation -->
-<footer id="footer-nav" class="site-footer bg-black1 text-white py-10" *ngFor="let list of contacts">
-  <div class="px-8">
-    <div class="flex items-center justify-between ml-5">
-      <div class="footer-site-info text-xs font-thin">&copy; MODELIS TECH 2021</div>
-      <div class="footer-navigation">
-        <nav id="footer-navigation" class="flex space-x-4">
-          <ul class="flex space-x-4">
-            <li><a  class="text-sm hover:text-yellow-400"> {{ list.adresse }} </a></li>
-            <li><a class="text-sm hover:text-yellow-400">{{ list.email }}</a></li>
-            <li><a class="text-sm hover:text-yellow-400">{{ list.tel }}</a></li>
-          </ul>
-        </nav>
+  <!-- Première barre de séparation -->
+  <div class="border-t w-4/5 mx-auto border-gray-300"></div>
+
+  <!-- Section principale avec les menus -->
+  <div class="w-4/5 mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Description -->
+      <div class="space-y-4">
+        <p class="text-sm text-gray-300">
+          L'équipe technique de MODELIS TECH vous accompagne dans la réalisation de vos logiciels
+          d'entreprise qu'ils soient spécifiques à un métier ou pas.
+        </p>
+      </div>
+
+      <!-- Menu -->
+      <div>
+        <h3 class="font-semibold mb-4">Menu</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li><a routerLink="/accueil" class="hover:text-blue-400">Accueil</a></li>
+          <li><a routerLink="/apropos" class="hover:text-blue-400">A propos</a></li>
+          <li><a routerLink="/expertises" class="hover:text-blue-400">Services</a></li>
+          <li><a routerLink="/equipe" class="hover:text-blue-400">Equipe</a></li>
+          <li><a routerLink="/Projets" class="hover:text-blue-400">Projets</a></li>
+          <li><a routerLink="/blog" class="hover:text-blue-400">Blog</a></li>
+          <li><a routerLink="/carriere" class="hover:text-blue-400">Carrière</a></li>
+        </ul>
+      </div>
+
+      <!-- Liens utiles -->
+      <div>
+        <h3 class="font-semibold mb-4">Liens utiles</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li><a routerLink="/accueil" class="hover:text-blue-400">Modelis-Gc</a></li>
+          <li><a routerLink="/apropos" class="hover:text-blue-400">Modelis-Group</a></li>
+          <li><a routerLink="/expertises" class="hover:text-blue-400">Modelis-Tech</a></li>
+          <li><a routerLink="/expertises" class="hover:text-blue-400">Modelis-Gis</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter (remplace Publications récentes) -->
+      <div>
+        <h3 class="font-semibold mb-4">Newsletter</h3>
+        <div class="space-y-4">
+          <p class="text-sm text-gray-300">
+            Soyez informés de toutes nos actualités et nouveautés en vous inscrivant à notre newsletter.
+          </p>
+          <div class="space-y-3">
+            <input 
+              type="email" 
+              placeholder="Entrez votre email" 
+              class="w-full px-4 py-2 bg-transparent border border-white rounded-md text-sm text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
+            >
+            <button 
+              class="w-full px-4 py-2 bg-white text-base1 rounded-md text-sm font-medium hover:bg-blue-700 transition duration-300"
+            >
+              S'abonner
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Deuxième barre de séparation -->
+  <div class="border-t w-4/5 mx-auto border-gray-300"></div>
+
+  <!-- Section contacts et copyright -->
+  <div class="w-4/5 mx-auto px-4 py-4">
+    <div *ngFor="let list of contacts">
+      <div class="flex flex-wrap justify-between items-center text-xs text-gray-400">
+        <div class="footer-site-info">
+          &copy; MODELIS GROUP 2025
+        </div>
+        <div class="flex space-x-8">
+          <span>{{ list.adresse }}</span>
+          <span>{{ list.email }}</span>
+          <span>{{ list.tel }}</span>
+        </div>
       </div>
     </div>
   </div>

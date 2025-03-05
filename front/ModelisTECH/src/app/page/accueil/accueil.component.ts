@@ -4,49 +4,36 @@ import { SliderComponent } from '../../layout/slider/slider.component';
 import { AboutComponent } from '../../layout/about/about.component';
 import { ServicesComponent } from '../../layout/service/service.component';
 import {CommonModule, DatePipe} from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environment/environment';
 import { FooterComponent } from '../../layout/footer/footer.component';
 import { EquipeContentComponent } from '../../layout/equipe-content/equipe-content.component';
 import { EquipeController } from '../../services/controller/equipe.controller';
+import { RouterLink } from '@angular/router';
+import { RealisationController, Realisation } from '../../services/controller/realisation.controller';
 
 interface ClientLogo {
   id: number;
   name: string;
   image: string;
 }
-interface Image {
-  id: number;
-  image: string;
 
-}
-
-interface PaysId {
+interface Site {
   id: number;
   code: string;
   nom: string;
 }
 
-interface TypeClientId {
+interface Client {
   id: number;
+  siteId: Site;
   image: string;
   description: string;
   dateCreation: string;
 }
 
-interface Realisation {
-  dateCreation: string;
-  dateDebut: string;
-  dateFin: string | null;
-  description: string;
-  enCours: boolean;
-  id: number;
-  images: Image[];
-  libelle: string;
-  paysId: PaysId;
-  resultat: string;
-  typeclientId: TypeClientId;
+interface Image {
+  image: string;
 }
 
 @Component({
@@ -59,7 +46,7 @@ interface Realisation {
     CommonModule,
     EquipeContentComponent,
     FooterComponent,
-    DatePipe,
+    RouterLink
   ],
   standalone: true,
   templateUrl: './accueil.component.html',
@@ -70,25 +57,24 @@ export class AccueilComponent implements OnInit {
   imgPath = '/images/page-bg/image_historique.png';
   imgFixed = '/images/page-bg/carriere.jpg';
   realisations: Realisation[] = [];
-  imgBack = environment.apiUrl;
+  imgBack: string = environment.apiUrl;
   membres: any[] = [];
 
   constructor(
-    private http: HttpClient,
-    private equipeController: EquipeController
+    private equipeController: EquipeController,
+    private realisationController: RealisationController
   ) {}
 
   fetchRealisations(): void {
-    this.http.get<Realisation[]>(environment.apiUrl+'api/realisation')
-      .subscribe({
-        next: (data) => {
-          this.realisations = data;
-          console.log(this.realisations);
-        },
-        error: (err) => {
-          console.error('Erreur lors de la récupération des données', err);
-        }
-      });
+    this.realisationController.listAll().subscribe({
+      next: (data) => {
+        this.realisations = data;
+        console.log('Réalisations:', this.realisations);
+      },
+      error: (error) => {
+        console.error('Erreur lors de la récupération des réalisations:', error);
+      }
+    });
   }
 
   fetchEquipe(): void {
