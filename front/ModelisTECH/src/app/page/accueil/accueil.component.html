@@ -1,8 +1,9 @@
 <app-slider/>
 <app-about/>
 <app-services/>
+<app-equipe-content/>
 
-<!-- historique   -->
+<!-- historique  
 
 <div class="bg-white pt-2.5 pb-7.5">
   <div class="container mx-auto px-4">
@@ -13,79 +14,39 @@
       <img [src]="imgPath" class="bg-cover" alt="">
     </div>
     </div>
-</div>
-<!-- pourquoi nous ?   -->
+</div>  -->
+
+<!-- Ils nous font confiance  -->
 <div class="relative bg-fixed bg-cover py-19" style="background-image: url({{imgFixed}});">
   <!-- Fond noir transparent sous le texte -->
   <div class="absolute inset-0 bg-black opacity-40 z-0"></div>
 
   <div class="container mx-auto px-6 relative z-10">
-    <div class="text-center text-white mb-16 pt-32">
+    <div class="text-center text-white mb-10 pt-32">
       <!-- Décalage du texte vers le bas avec padding-top -->
-      <h1 class="font-poppins pb-6 text-4xl tracking-widest font-semibold">POURQUOI NOUS CHOISIR ?</h1>
-      <p class="font-poppins text-2xl">5 bonnes raisons de travailler avec MODELIS TECH</p>
+      <h1 class="font-poppins pb-8 text-5xl uppercase font-bold">ILS NOUS FONT CONFIANCE</h1>
+      <p class="font-poppins text-2xl">De nombreuses entreprises nous font confiance</p>
     </div>
 
-    <div class="mt-12 flex text-white font-poppins text-lg gap-6 pb-16 justify-center">
-      <!-- Première colonne -->
-      <div class="w-full sm:w-1/2 lg:w-1/5 text-center flex flex-col items-center">
-        <p class="pb-8 text-center">Nous utilisons les technologies dont <br> nous faisons la promotion</p>
-        <span class="text-cyan-600 flex justify-center items-center">
-          <!-- Icône -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-16">
-            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
-          </svg>
-        </span>
-      </div>
-
-      <!-- Deuxième colonne -->
-      <div class="w-full sm:w-1/2 lg:w-1/5 text-center flex flex-col items-center">
-        <p class="pb-8 text-center">Nous avons une <br>équipe <br> pluridisciplinaire</p>
-        <span class="text-cyan-600 flex justify-center items-center">
-          <!-- Icône -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-16">
-            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
-          </svg>
-        </span>
-      </div>
-
-      <!-- Troisième colonne -->
-      <div class="w-full sm:w-1/2 lg:w-1/5 text-center flex flex-col items-center">
-        <p class="pb-8 text-center">Nous restons à <br> l'écoute des besoins <br> de nos clients</p>
-        <span class="text-cyan-600 flex justify-center items-center">
-          <!-- Icône -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-16">
-            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
-          </svg>
-        </span>
-      </div>
-
-      <!-- Quatrième colonne -->
-      <div class="w-full sm:w-1/2 lg:w-1/5 text-center flex flex-col items-center">
-        <p class="pb-8 text-center">Nous proposons des solutions innovantes <br> aux problématiques</p>
-        <span class="text-cyan-600 flex justify-center items-center">
-          <!-- Icône -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-16">
-            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
-          </svg>
-        </span>
-      </div>
-
-      <!-- Cinquième colonne -->
-      <div class="w-full sm:w-1/2 lg:w-1/5 text-center flex flex-col items-center">
-        <p class="pb-8 text-center">Nous portons nos <br>valeurs auprès de nos clients</p>
-        <span class="text-cyan-600 flex justify-center items-center">
-          <!-- Icône -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-16">
-            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
-          </svg>
-        </span>
+    <div class="mt-12 pb-16">
+      <div class="w-full overflow-hidden">
+        <div class="flex animate-scroll whitespace-nowrap">
+          <div class="flex items-center justify-center space-x-20 px-8">
+            <img src="/images/clients/fusion.png" alt="Fusion" class="h-16 w-auto object-contain">
+            <img src="/images/clients/blanc-bani.png" alt="Bani" class="h-16 w-auto object-contain">
+            <img src="/images/clients/blanc-cienergie.png" alt="CI Energie" class="h-16 w-auto object-contain">
+            <img src="/images/clients/blanc-colas.png" alt="Colas" class="h-16 w-auto object-contain">
+            <img src="/images/clients/blanc-comafrique.png" alt="Comafrique" class="h-16 w-auto object-contain">
+            <img src="/images/clients/blanc-mclu.png" alt="MCLU" class="h-28 w-auto object-contain">
+            <img src="/images/clients/blanc-vinci.png" alt="Vinci" class="h-16 w-auto object-contain">
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- nos clients   -->
+<!-- nos clients 
 
 <div class="bg-gray-100 pt-16 pb-16">
   <div class="container mx-auto px-4">
@@ -115,15 +76,15 @@
       </div>
     </div>
   </div>
-</div>
+</div>   -->
 
-<!-- competences -->
+<!-- competences
 
 <div class="container mx-auto px-4 py-16">
   <h2 class="text-4xl font-semibold text-center tracking-wider text-gray-700 mb-12 font-poppins">NOS COMPETENCES</h2>
 
   <div class="flex justify-between items-center space-x-12 mx-16">
-    <!-- Compétence 1 -->
+   
     <div class="flex flex-col items-center w-1/3 relative">
       <div class="absolute mt-24 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
         <div class="w-24 h-24 bg-blue-500 rounded-full border-4 border-white flex items-center justify-center shadow-md mb-4">
@@ -136,10 +97,10 @@
       </div>
       <div class="mb-4 w-full mt-10">
         <ul class="list-disc text-base/10 absolute mt-60 list-inside text-cyan-800 w-full pl-6">
-          <li class="">Développement d’applications métiers (Topographie, Géographie, Informatique)</li>
+          <li class="">Développement d'applications métiers (Topographie, Géographie, Informatique)</li>
           <li>Développement de logiciels informatiques</li>
-          <li>Développement d’applications Web</li>
-          <li>Développement d’applications Mobiles</li>
+          <li>Développement d'applications Web</li>
+          <li>Développement d'applications Mobiles</li>
         </ul>
 
         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170.87 280.86" class="w-full">
@@ -156,7 +117,7 @@
       </div>
     </div>
 
-    <!-- Compétence 2 -->
+  
     <div class="flex flex-col items-center w-1/3 relative">
       <div class="absolute mt-24 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
         <div class="w-24 h-24 bg-blue-500 rounded-full border-4 border-white flex items-center justify-center shadow-md mb-4">
@@ -189,7 +150,7 @@
 
     </div>
 
-    <!-- Compétence 3 -->
+  
     <div class="flex flex-col items-center w-1/3 relative">
       <div class="absolute mt-24 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
         <div class="w-24 h-24 bg-blue-500 rounded-full border-4 border-white flex items-center justify-center shadow-md mb-4">
@@ -206,7 +167,7 @@
           <li>Formation en SIG : Open Source et propriétaire</li>
           <li>Formation en développement Web</li>
           <li>Formation en développement Mobile</li>
-          <li>Formation en développement d’applications métiers (Topographie, Géographie, Informatique)</li>
+          <li>Formation en développement d'applications métiers (Topographie, Géographie, Informatique)</li>
 
         </ul>
         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170.87 280.86" class="w-full">
@@ -225,7 +186,7 @@
 
     </div>
   </div>
-</div>
+</div>  -->
 
 <!-- nos realisations -->
 

@@ -6,3 +6,6 @@
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+.w-70p {
+  width: 70%;
+}

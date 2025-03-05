@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environment/environment';
 import { FooterComponent } from '../../layout/footer/footer.component';
+import { EquipeContentComponent } from '../../layout/equipe-content/equipe-content.component';
+import { EquipeController } from '../../services/controller/equipe.controller';
 
 interface ClientLogo {
   id: number;
@@ -55,8 +57,8 @@ interface Realisation {
     AboutComponent,
     ServicesComponent,
     CommonModule,
+    EquipeContentComponent,
     FooterComponent,
-    HttpClientModule,
     DatePipe,
   ],
   standalone: true,
@@ -69,9 +71,12 @@ export class AccueilComponent implements OnInit {
   imgFixed = '/images/page-bg/carriere.jpg';
   realisations: Realisation[] = [];
   imgBack = environment.apiUrl;
+  membres: any[] = [];
 
-
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private equipeController: EquipeController
+  ) {}
 
   fetchRealisations(): void {
     this.http.get<Realisation[]>(environment.apiUrl+'api/realisation')
@@ -85,8 +90,22 @@ export class AccueilComponent implements OnInit {
         }
       });
   }
+
+  fetchEquipe(): void {
+    this.equipeController.getPersonnel().subscribe({
+      next: (data) => {
+        this.membres = data;
+        console.log('Membres de l\'équipe:', this.membres);
+      },
+      error: (err) => {
+        console.error('Erreur lors de la récupération des membres de l\'équipe:', err);
+      }
+    });
+  }
+
   ngOnInit(): void {
     this.fetchRealisations();
+    this.fetchEquipe();
   }
 
   typeclients: ClientLogo[] = [

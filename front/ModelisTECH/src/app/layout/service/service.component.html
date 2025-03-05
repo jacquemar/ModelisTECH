@@ -1,17 +1,17 @@
 <div class="bg-gradient-to-r from-[#dfe2fe] via-[#b1cbfa] to-[#8e98f5] pt-8 pb-12">
-  <div class="container mx-auto px-4">
+  <div class="container mx-auto px-4 mb-36 ">
 
     <!-- Titre principal -->
-    <div class="mb-16 ml-10">
-      <h1 class="text-center text-6xl font-black font-poppins uppercase text-gray-800 mb-2">Notre expertise</h1>
-      <p class="text-lg text-center text-gray-700 font-poppins leading-relaxed">
+    <div class="mb-4 ml-10">
+      <h1 class="text-center text-6xl font-black font-poppins uppercase text-gray-800 mb-8">Notre expertise</h1>
+      <p class="text-lg text-center text-gray-700 mb-14 font-poppins leading-relaxed">
         MODELIS, créé en 2011 avec pour champ d'action toutes les<br>
         composantes de l'information géographique.
       </p>
     </div>
 
     <!-- Section Collecter -->
-    <div class="relative mb-24">
+    <div #serviceCard class="relative mb-4">
       <!-- Div principale -->
       <div class="w-70% h-96 mx-12 ring-1 ring-indigo-600 rounded-xl p-8 relative"
            style="background-image: url('/images/service/collecter3.jpg'); background-size: cover;">
@@ -46,16 +46,13 @@
           </button>
         </div>
       </div>
-      <!-- Canvas flottant -->
+      <!-- Canvas flottant
       <div class="absolute right-0 -top-24">
         <canvas id="collecter-canvas" class="w-[625px] h-[625px]"></canvas>
-      </div>
+      </div>-->
     </div>
-
-
-
     <!-- Section Traiter -->
-    <div class="relative mb-24">
+    <div #serviceCard class="relative mb-4">
       <!-- Div principale -->
       <div class="w-70% h-96 mx-12 ring-1 ring-indigo-600 rounded-xl p-8 relative"
            style="background-image: url('/images/service/collecter4.jpg'); background-size: cover;">
@@ -90,14 +87,13 @@
           </button>
         </div>
       </div>
-      <!-- Canvas flottant -->
+      <!-- Canvas flottant
       <div class="absolute left-96 -bottom-80 ">
         <canvas id="traiter-canvas" class="w-[1050px] h-[1050px]"></canvas>
-      </div>
+      </div>-->
     </div>
-
     <!-- Section Diffuser -->
-    <div class="relative mb-24">
+    <div #serviceCard class="relative mb-4">
       <!-- Div principale -->
       <div class="w-70% h-96 mx-12 ring-1 ring-indigo-600 rounded-xl p-8 relative"
            style="background-image: url('/images/service/diffuser2.jpg'); background-size: cover;">
@@ -132,14 +128,13 @@
           </button>
         </div>
       </div>
-      <!-- Canvas flottant -->
+      <!-- Canvas flottant
       <div class="absolute right-36 -bottom-20 ">
         <canvas id="diffuser-canvas" class="w-[550px] h-[550px]"></canvas>
-      </div>
+      </div>-->
     </div>
-
     <!-- Section Construire -->
-    <div class="relative mb-24">
+    <div #serviceCard class="relative mb-4 ">
       <!-- Div principale -->
       <div class="w-70% h-96 mx-12 ring-1 ring-indigo-600 rounded-xl p-8 relative"
            style="background-image: url('/images/service/collecter4.jpg'); background-size: cover;">
@@ -174,21 +169,191 @@
           </button>
         </div>
       </div>
-      <!-- Canvas flottant -->
+      <!-- Canvas flottant
       <div class="absolute left-96 -bottom-80 ">
         <canvas id="construire-canvas" class="w-[1050px] h-[1050px]"></canvas>
-      </div>
+      </div>-->
     </div>
 
-    <!-- Bouton voir tous les services -->
+
+    <!-- Container pour empiler légèrement les sections
+    <div #servicesContainer class="relative space-y-[-60px] py-10 px-6">
+
+
+      <div #serviceCard class="relative transform transition-all duration-200 hover:z-30 service-card"
+           data-gsap-card="collecter">
+
+        <div class="w-70p h-96 mx-12 rounded-2xl p-8 relative shadow-md transition-shadow"
+             style="background-image: url('/images/service/collecter3.jpg'); background-size: cover; background-position: center;">
+
+          <div class="absolute inset-0 bg-black/30 hover:bg-black/80 rounded-xl"></div>
+
+
+          <div class="w-1/2 justify-center ml-28 mt-6 relative z-10">
+            <h2 class="uppercase font-black font-poppins text-6xl mb-4 text-white">Collecter</h2>
+            <ul class="space-y-2 text-white list-none text-xl mb-6">
+              <li class="flex items-center ">
+                <span class="w-2 h-2 bg-orange-500 rounded-full mr-4"></span>
+                Collecte de données de terrain
+              </li>
+              <li class="flex items-center ">
+                <span class="w-2 h-2 bg-orange-500 rounded-full mr-4"></span>
+                Travaux de topographie
+              </li>
+              <li class="flex items-center ">
+                <span class="w-2 h-2 bg-orange-500 rounded-full mr-4"></span>
+                Vente et location d'appareil de mesure
+              </li>
+              <li class="flex items-center ">
+                <span class="w-2 h-2 bg-orange-500 rounded-full mr-4"></span>
+                Maintenance et réparation d'appareil
+              </li>
+            </ul>
+
+            <button class="bg-base1 border border-orange-500 border-1 text-white hover:text-white
+                  px-6 py-2 rounded-md hover:bg-opacity-20 transition-all duration-300 w-fit">
+              Parcourir nos projets ..
+            </button>
+          </div>
+        </div>
+
+        <div class="absolute right-0 -top-24 canvas-container">
+          <canvas id="collecter-canvas" class="w-[625px] h-[625px]"></canvas>
+        </div>
+      </div>
+
+
+      <div  #serviceCard class="relative transform duration-500 hover:z-30 service-card"
+           data-gsap-card="traiter">
+
+        <div class="w-70p h-96 mx-12 rounded-2xl shadow-md p-8 relative "
+             style="background-image: url('/images/service/collecter4.jpg'); background-size: cover;">
+
+          <div class="absolute inset-0 bg-black/30 hover:bg-black/80 rounded-xl"></div>
+          <div class="w-1/2 justify-center ml-28 mt-6 relative z-10">
+            <h2 class="uppercase font-black font-poppins text-6xl mb-4 text-white">Traiter</h2>
+            <ul class="space-y-2 text-white list-none text-xl mb-6">
+              <li class="flex items-center ">
+                <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+                Analyse Spatiale
+              </li>
+              <li class="flex items-center ">
+                <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+                Intégration de données
+              </li>
+              <li class="flex items-center ">
+                <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+                Intégration et customisation de solutions
+              </li>
+              <li class="flex items-center ">
+                <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+                Développement de solution métiers (cadrastre, Administration foncière, Défense environnementale)
+              </li>
+            </ul>
+
+            <button class="bg-base1 border border-1 text-white hover:text-white
+px-6 py-2 rounded-md hover:bg-opacity-20 transition-all duration-300 w-fit">
+              Parcourir nos projets ..
+            </button>
+          </div>
+        </div>
+        <div class="absolute left-96 -bottom-80 canvas-container">
+          <canvas id="traiter-canvas" class="w-[1050px] h-[1050px]"></canvas>
+        </div>
+      </div>
+
+
+      <div  #serviceCard class="relative transform transition-all duration-200 hover:z-30 service-card"
+           data-gsap-card="diffuser">
+
+        <div class="w-70p h-96 mx-12 rounded-xl p-8 relative shadow-md"
+             style="background-image: url('/images/service/diffuser2.jpg'); background-size: cover;">
+
+          <div class="absolute inset-0 bg-black/30 hover:bg-black/80 rounded-xl"></div>
+          <div class="w-1/2 justify-center ml-28 mt-6 relative z-10">
+            <h2 class="uppercase font-black font-poppins text-6xl mb-4 text-white">Diffuser</h2>
+            <ul class="space-y-2 text-white list-none text-xl mb-6">
+              <li class="flex items-center ">
+                <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+                Système d'information géographique
+              </li>
+              <li class="flex items-center ">
+                <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+                Cartographie
+              </li>
+              <li class="flex items-center ">
+                <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+                Applications Web/Mobile
+              </li>
+              <li class="flex items-center ">
+                <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+                Formations
+              </li>
+            </ul>
+
+            <button class="bg-base1 border border-1 text-white hover:text-white
+px-6 py-2 rounded-md hover:bg-opacity-20 transition-all duration-300 w-fit">
+              Parcourir nos projets ..
+            </button>
+          </div>
+        </div>
+        <div class="absolute right-36 -bottom-20 canvas-container">
+          <canvas id="diffuser-canvas" class="w-[550px] h-[550px]"></canvas>
+        </div>
+      </div>
+
+
+      <div #serviceCard class="relative transform transition-all duration-100 hover:z-30 service-card"
+           data-gsap-card="construire">
+
+
+        <div class="w-70p h-96 mx-12 rounded-xl p-8 relative shadow-md"
+             style="background-image: url('/images/service/construire2.jpg'); background-size: cover;background-position: center;">
+
+          <div class="absolute inset-0 bg-black/30 hover:bg-black/80 rounded-xl"></div>
+          <div class="w-1/2 justify-center ml-28 mt-6 relative z-10">
+            <h2 class="uppercase font-black font-poppins text-6xl mb-4 text-white">Construire</h2>
+            <ul class="space-y-2 text-white list-none text-xl mb-6">
+              <li class="flex items-center ">
+                <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+                Ingénierie de projet génie civil
+              </li>
+              <li class="flex items-center ">
+                <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+                Réalisation de postes électriques
+              </li>
+              <li class="flex items-center ">
+                <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+                Travaux de construction
+              </li>
+              <li class="flex items-center ">
+                <span class="w-2 h-2 bg-white rounded-full mr-4"></span>
+                travaux de rénovation de bâtiments
+              </li>
+            </ul>
+
+            <button class="bg-base1 border border-1 text-white hover:text-white
+px-6 py-2 rounded-md hover:bg-opacity-20 transition-all duration-300 w-fit">
+              Parcourir nos projets ..
+            </button>
+
+          </div>
+        </div>
+        <div class="absolute left-96 -bottom-80 canvas-container">
+          <canvas id="construire-canvas" class="w-[1050px] h-[1050px]"></canvas>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Bouton voir tous les services
     <div class="mt-12 flex justify-end">
       <a routerLink="/services"
          class="inline-block px-6 py-3 text-white bg-base1 hover:bg-black rounded transition-colors duration-300 text-lg font-semibold">
         Voir tous les services
       </a>
-    </div>
+    </div> -->
 
-    <!-- Liste des services -->
+    <!-- Liste des services
     <div class="relative mt-16">
       <div class="mx-8 overflow-x-auto no-scrollbar">
         <div class="inline-flex gap-6">
@@ -215,9 +380,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <!-- Boutons de navigation -->
+      <!-- Boutons de navigation
       <div class="flex gap-4 mt-8 justify-center">
         <button (click)="scrollLeft()" class="group p-3 rounded-full bg-black bg-opacity-30 hover:bg-black transition-all duration-300">
           <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -230,7 +395,7 @@
           </svg>
         </button>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 
