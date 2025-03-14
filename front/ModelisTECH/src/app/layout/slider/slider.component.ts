@@ -1,8 +1,7 @@
-
 import {AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { Router } from '@angular/router';
 import { register } from 'swiper/element/bundle';
 import { DotLottie } from '@lottiefiles/dotlottie-web';
-
 
 register();
 
@@ -15,8 +14,21 @@ register();
   styleUrls: ['./slider.component.css'],
 })
 export class SliderComponent implements AfterViewInit {
+  constructor(private router: Router) {}
+
   videoCover= 'videos/videoCover2.mp4';
   dotLottieGlobe: DotLottie | undefined;
+
+  scrollToAbout(event: Event) {
+    event.preventDefault();
+    const nextSection = document.getElementById('next-section');
+    if (nextSection) {
+      nextSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }
 
   ngAfterViewInit(){
 

@@ -11,18 +11,18 @@
         </div>
 
         <ul id="navElements" class="hidden lg:flex items-center justify-center gap-6 md:gap-8 py-3 sm:justify-center">
-          <li><a href="/" class="text-sm font-medium text-white hover:text-base1 dark:text-white dark:hover:text-primary-500">Accueil</a></li>
-          <li><a href="/apropos" class="text-sm font-medium text-white hover:text-base1 dark:text-white dark:hover:text-primary-500">À Propos</a></li>
-          <li><a href="/services" class="text-sm font-medium text-white hover:text-base1 dark:text-white dark:hover:text-primary-500">Services</a></li>
-          <li><a href="/equipe" class="text-sm font-medium text-white hover:text-base1 dark:text-white dark:hover:text-primary-500">Équipe</a></li>
-          <li><a href="/projets" class="text-sm font-medium text-white hover:text-base1 dark:text-white dark:hover:text-primary-500">Projet</a></li>
-          <li><a href="/carriere" class="text-sm font-medium text-white hover:text-base1 dark:text-white dark:hover:text-primary-500">Carrière</a></li>
+          <li><a (click)="scrollToTop($event)" class="text-sm font-medium text-white hover:text-base1 dark:text-white dark:hover:text-primary-500 cursor-pointer">Accueil</a></li>
+          <li><a (click)="scrollToAbout($event)" class="text-sm font-medium text-white hover:text-base1 dark:text-white dark:hover:text-primary-500 cursor-pointer">À Propos</a></li>
+          <li><a (click)="scrollToServices($event)" class="text-sm font-medium text-white hover:text-base1 dark:text-white dark:hover:text-primary-500 cursor-pointer">Expertise</a></li>
+          <li><a (click)="scrollToTeam($event)" class="text-sm font-medium text-white hover:text-base1 dark:text-white dark:hover:text-primary-500 cursor-pointer">Équipe</a></li>
+          <li><a (click)="scrollToProjects($event)" class="text-sm font-medium text-white hover:text-base1 dark:text-white dark:hover:text-primary-500 cursor-pointer">Réalisations</a></li>
+          <!-- <li><a href="/carriere" class="text-sm font-medium text-white hover:text-base1 dark:text-white dark:hover:text-primary-500">Carrière</a></li> -->
         </ul>
       </div>
 
       <div class="flex items-center lg:space-x-2">
         <button type="button" class="inline-flex items-center rounded-lg justify-center p-3 mx-6 bg-base1 hover:bg-gray-100 hover:text-black dark:hover:bg-gray-700 text-sm font-medium leading-none text-white dark:text-white">
-          Nous contacter
+         <a href="/contacts">Nous contacter</a>
         </button>
 
         <button type="button" data-collapse-toggle="navElements" aria-controls="navElements" aria-expanded="false" class="inline-flex lg:hidden items-center justify-center hover:bg-gray-100 rounded-md dark:hover:bg-gray-700 p-2 text-gray-900 dark:text-white">

@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 export class AboutComponent implements AfterViewInit {
   imgPath = '/images/page-bg/tout-MODELIS.png';
   imgCard1 = '/images/page-bg/genie-civil.jpg';
-  imgCard2 = '/images/page-bg/geo.jpg';
+  imgCard2 = '/images/page-bg/geo2.jpg';
   imgCard3 = '/images/page-bg/ingenieurs-tech.jpg';
 
   @ViewChild('animatedImage') animatedImage!: ElementRef;

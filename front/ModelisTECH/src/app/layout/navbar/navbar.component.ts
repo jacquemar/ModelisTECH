@@ -1,4 +1,3 @@
-
 import {Component, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HttpClient} from '@angular/common/http';
@@ -14,7 +13,8 @@ import {list} from 'postcss';
 
     CommonModule
   ],
-  templateUrl: './navbar.component.html'
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
   contacts: any[] = [];
@@ -39,4 +39,41 @@ export class NavbarComponent implements OnInit {
   }
 
   protected readonly list = list;
+
+  scrollToTop(event: Event) {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  scrollToAbout(event: Event) {
+    event.preventDefault();
+    const aboutSection = document.getElementById('next-section');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  scrollToServices(event: Event) {
+    event.preventDefault();
+    const servicesSection = document.getElementById('services-section');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  scrollToTeam(event: Event) {
+    event.preventDefault();
+    const teamSection = document.getElementById('team-section');
+    if (teamSection) {
+      teamSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  scrollToProjects(event: Event) {
+    event.preventDefault();
+    const projectsSection = document.getElementById('projects-section');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }

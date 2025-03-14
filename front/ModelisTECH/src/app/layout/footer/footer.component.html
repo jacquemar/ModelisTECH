@@ -9,13 +9,13 @@
       </div>
       <!-- Réseaux sociaux -->
       <div class="flex items-center gap-4">
-        <a href="#" class="hover:opacity-80 transition-opacity">
+        <a href="https://www.facebook.com/ModelisGroup" class="hover:opacity-80 transition-opacity">
           <img src="/images/icons/facebook-new.png" alt="Facebook" class="h-8 w-8 object-contain">
         </a>
-        <a href="#" class="hover:opacity-80 transition-opacity">
+        <a href="https://www.linkedin.com/company/modelis-group" class="hover:opacity-80 transition-opacity">
           <img src="/images/icons/linkedin.png" alt="LinkedIn" class="h-8 w-8 object-contain">
         </a>
-        <a href="#" class="hover:opacity-80 transition-opacity">
+        <a href="mailto:contact@modelis-group.com" class="hover:opacity-80 transition-opacity">
           <img src="/images/icons/mail.png" alt="Email" class="h-8 w-8 object-contain">
         </a>
       </div>
@@ -30,34 +30,32 @@
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
       <!-- Description -->
       <div class="space-y-4">
-        <p class="text-sm text-gray-300">
-          L'équipe technique de MODELIS TECH vous accompagne dans la réalisation de vos logiciels
-          d'entreprise qu'ils soient spécifiques à un métier ou pas.
+        <p class="text-sm text-gray-300 text-justify">
+          MODELIS réunit une équipe dynamique dont l'expertise et la connaissance métier sont reconnues par la communauté SIG, l'administration publique et le secteur privée.
         </p>
       </div>
 
       <!-- Menu -->
       <div>
         <h3 class="font-semibold mb-4">Menu</h3>
-        <ul class="space-y-2 text-sm text-gray-300">
-          <li><a routerLink="/accueil" class="hover:text-blue-400">Accueil</a></li>
-          <li><a routerLink="/apropos" class="hover:text-blue-400">A propos</a></li>
-          <li><a routerLink="/expertises" class="hover:text-blue-400">Services</a></li>
-          <li><a routerLink="/equipe" class="hover:text-blue-400">Equipe</a></li>
-          <li><a routerLink="/Projets" class="hover:text-blue-400">Projets</a></li>
-          <li><a routerLink="/blog" class="hover:text-blue-400">Blog</a></li>
-          <li><a routerLink="/carriere" class="hover:text-blue-400">Carrière</a></li>
-        </ul>
+<ul class="space-y-2 text-sm text-gray-300">
+          <li><a href="/" class="hover:text-blue-400">Accueil</a></li>
+          <li><a (click)="scrollToAbout($event)" class="hover:text-blue-400 cursor-pointer">A propos</a></li>
+          <li><a (click)="scrollToServices($event)" class="hover:text-blue-400 cursor-pointer">Expertise</a></li>
+          <li><a (click)="scrollToTeam($event)" class="hover:text-blue-400 cursor-pointer">Equipe</a></li>
+          <li><a (click)="scrollToProjects($event)" class="hover:text-blue-400 cursor-pointer">Realisations</a></li>
+         <!-- <li><a routerLink="/carriere" class="hover:text-blue-400">Carrière</a></li> -->
+        </ul>        
       </div>
 
       <!-- Liens utiles -->
       <div>
         <h3 class="font-semibold mb-4">Liens utiles</h3>
         <ul class="space-y-2 text-sm text-gray-300">
-          <li><a routerLink="/accueil" class="hover:text-blue-400">Modelis-Gc</a></li>
-          <li><a routerLink="/apropos" class="hover:text-blue-400">Modelis-Group</a></li>
-          <li><a routerLink="/expertises" class="hover:text-blue-400">Modelis-Tech</a></li>
-          <li><a routerLink="/expertises" class="hover:text-blue-400">Modelis-Gis</a></li>
+          <li><a routerLink="/accueil" class="hover:text-blue-400">Modelis-GROUP</a></li>
+          <li><a routerLink="/apropos" class="hover:text-blue-400">Modelis-TECH</a></li>
+          <li><a routerLink="/expertises" class="hover:text-blue-400">Modelis-GIS</a></li>
+          <li><a routerLink="/expertises" class="hover:text-blue-400">Modelis-GC</a></li>
         </ul>
       </div>
 

@@ -189,21 +189,18 @@
 </div>  -->
 
 <!-- nos realisations -->
-
-
-<div class="bg-gradient-to-r from-[#dfe2fe] via-[#b1cbfa] to-[#8e98f5] py-16">
+<div id="projects-section" class="bg-gradient-to-r from-[#dfe2fe] mx-12 via-[#b1cbfa] to-[#8e98f5] py-16">
   <div class="container mx-auto px-4">
     <h1 class="text-center font-poppins pb-12 mt-20 text-6xl font-black text-gray-800">NOS RÉALISATIONS</h1>
 
     <!-- Cards Container -->
-    <div class="grid grid-cols-1 md:grid-cols-3 mt-20 gap-8 mb-12">
-      <!-- Card (répété 3 fois) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20 gap-8 mb-12">
       <div 
         class="bg-white rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer" 
-        *ngFor="let realisation of realisations.slice(0, 3)"
+        *ngFor="let realisation of realisations.slice(0, 6)"
         [routerLink]="['/projets', realisation.id]"
       >
-        <div class="relative h-64 overflow-hidden group">
+        <div class="relative h-48 overflow-hidden group">
           <img 
             [src]="imgBack + realisation.images[0].image"
             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
@@ -221,9 +218,9 @@
             </span>
           </div>
         </div>
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">{{ realisation.libelle }}</h3>
-          <p class="text-gray-600">{{ realisation.paysId?.nom || 'Projet' }}</p>
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">{{ realisation.libelle }}</h3>
+          <p class="text-gray-600">{{ realisation.paysId.nom || 'Projet' }}</p>
         </div>
       </div>
     </div>
